@@ -1,4 +1,4 @@
-import { c, html, css, Props } from "atomico";
+import { c, html, css } from "atomico";
 
 function button({ label, primary, onClick }) {
   return html`

@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas, Heading, Title, Subtitle, Controls, Source, } from "@storybook/addon-docs/blocks";
+import { html } from "lit-html";
+
+<Meta of={Button} />
+
+<Title>Button - Web Component</Title>
+
+<Heading>Variantes</Heading>
+
+Para los botones, existen variantes que se combinan entre sí. Todas las variantes pueden ser usadas en todos los tipos
+de dispositivos. El primer nivel es de prioridad, y hay cuatro opciones: 'Primary', 'Secondary', 'Tertiary' y 'Accent'.
+El segundo nivel corresponde a los tamaños, que son 'Flex' y 'Fixed'. Se debe tener en cuenta que la versión 'Tertiary'
+no incluye el tamaño 'Fixed'. Por último, para las variantes 'Primary' 'Secondary' y 'Tertiary', hay dos versiones de
+color: 'Light' y 'Dark'.
+
+<Subtitle>Primary</Subtitle>
+
+<Canvas of={Button.Primary} />
