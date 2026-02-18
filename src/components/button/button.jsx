@@ -2,7 +2,7 @@ import { c, useRef, useEffect, useState, useEvent, Fragment } from 'atomico';
 import { useSlot } from "@atomico/hooks/use-slot";
 
 import componentProps from './button.props';
-import { primaryButton } from './button.styles';
+import { baseStyles, primaryLight } from './button.styles';
 
 const Component = ({ 
   label, 
@@ -85,12 +85,12 @@ const Component = ({
   }, [variant, color, full, disabled, vertical, fluid]);
 
   return (
-    <host shadowDom>
+    <host shadowDom className={hostClasses}>
       <a ref={refAnchor} href={href} target={target} className="hidden"></a>
       <button 
         ref={refButton}
         onclick={methods.on.click}
-        class={variant} 
+        className={classes}
         disabled={disabled}
       >
         {label || "button"} 
@@ -100,5 +100,5 @@ const Component = ({
 }
 
 Component.props = componentProps;
-Component.styles = [primaryButton];
+Component.styles = [baseStyles, primaryLight];
 customElements.define('dsh-button', c(Component));
