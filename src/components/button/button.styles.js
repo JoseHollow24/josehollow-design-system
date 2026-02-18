@@ -25,6 +25,9 @@ import {
   DshColorSecondaryG5,
   DshColorSecondaryG6,
   DshSpace0,
+  DshColorSecondaryA1,
+  DshColorSecondaryA2,
+  DshColorSecondaryA3,
 } from '../../generated-tokens/tokens.js'
 
 const DshColorTransparent = 'transparent';
@@ -122,6 +125,40 @@ export const primaryLight = css`
   }
   button.primary.blue.vertical:focus {
     border: 3px solid ${DshColorPrimaryC3};
+    padding: calc(${DshSpace150} - 3px) calc(${DshSpace200} - 3px);
+  }
+  button.primary.blue.vertical {
+    padding: ${DshSpace150} ${DshSpace200};
+  }
+  button.primary.blue {
+    color: ${DshColorMonochromaticW1};
+    background-color: ${DshColorSecondaryA2};
+  }
+  button.primary.blue:hover {
+    background-color: ${DshColorSecondaryA1};
+  }
+  button.primary.blue:active {
+    color: ${DshColorSecondaryG5};
+    background-color: ${DshColorSecondaryA1};
+    border: 3px solid ${DshColorPrimaryC3};
+    padding: calc(${DshSpace150} - 3px) calc(${DshSpace300} - 3px);
+  }
+  button.primary.blue:focus {
+    color: ${DshColorMonochromaticW1};
+    background-color: ${DshColorSecondaryA2};
+    outline: ${DshStrokeWeightM} solid ${DshColorPrimaryC2};
+    outline-offset: ${DshStrokeWeightM};
+  }
+  button.primary.blue:active:focus {
+    color: ${DshColorSecondaryG5};
+    background-color: ${DshColorSecondaryA1};
+    border: 3px solid ${DshColorSecondaryA3};
+    padding: calc(${DshSpace150} - 3px) calc(${DshSpace300} - 3px);
+    outline: none;
+    outline-offset: 0;
+  }
+  button.primary.blue.vertical:focus {
+    border: 3px solid ${DshColorSecondaryA3};
     padding: calc(${DshSpace150} - 3px) calc(${DshSpace200} - 3px);
   }
   button.primary.blue.vertical {
