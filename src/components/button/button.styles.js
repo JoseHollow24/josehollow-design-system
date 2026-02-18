@@ -130,26 +130,26 @@ export const primaryLight = css`
   button.primary.blue.vertical {
     padding: ${DshSpace150} ${DshSpace200};
   }
-  button.primary.blue {
+  button.primary.yellow {
     color: ${DshColorMonochromaticW1};
     background-color: ${DshColorSecondaryA2};
   }
-  button.primary.blue:hover {
+  button.primary.yellow:hover {
     background-color: ${DshColorSecondaryA1};
   }
-  button.primary.blue:active {
+  button.primary.yellow:active {
     color: ${DshColorSecondaryG5};
     background-color: ${DshColorSecondaryA1};
     border: 3px solid ${DshColorPrimaryC3};
     padding: calc(${DshSpace150} - 3px) calc(${DshSpace300} - 3px);
   }
-  button.primary.blue:focus {
+  button.primary.yellow:focus {
     color: ${DshColorMonochromaticW1};
     background-color: ${DshColorSecondaryA2};
     outline: ${DshStrokeWeightM} solid ${DshColorPrimaryC2};
     outline-offset: ${DshStrokeWeightM};
   }
-  button.primary.blue:active:focus {
+  button.primary.yellow:active:focus {
     color: ${DshColorSecondaryG5};
     background-color: ${DshColorSecondaryA1};
     border: 3px solid ${DshColorSecondaryA3};
@@ -157,11 +157,11 @@ export const primaryLight = css`
     outline: none;
     outline-offset: 0;
   }
-  button.primary.blue.vertical:focus {
+  button.primary.yellow.vertical:focus {
     border: 3px solid ${DshColorSecondaryA3};
     padding: calc(${DshSpace150} - 3px) calc(${DshSpace200} - 3px);
   }
-  button.primary.blue.vertical {
+  button.primary.yellow.vertical {
     padding: ${DshSpace150} ${DshSpace200};
   }
   button.primary:disabled {
