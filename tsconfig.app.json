@@ -8,5 +8,5 @@
     "jsx": "react-jsx",
     "jsxImportSource": "atomico"
   },
-  "include": ["src/**/*"] // El "/**/*" asegura que busque en todas las subcarpetas
+  "include": ["src/**/*", "build-tokens.js"] // El "/**/*" asegura que busque en todas las subcarpetas
 }

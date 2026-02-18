@@ -1,52 +1,104 @@
-import { c, html, css } from "atomico";
+import { c, useRef, useEffect, useState, useEvent, Fragment } from 'atomico';
+import { useSlot } from "@atomico/hooks/use-slot";
 
-function button({ label, primary, onClick }) {
-  return html`
+import componentProps from './button.props';
+import { primaryButton } from './button.styles';
+
+const Component = ({ 
+  label, 
+  variant = "primary",
+  disabled,
+  id, name, type, color, loading, href, target, full, fluid, ariaLabel, width, vertical
+}) => {
+  //States
+  const [classes, setClasses] = useState('');
+  const [hostClasses, setHostClasses] = useState('');
+
+  //Ref
+  const refSlotStart = useRef();
+  const refSlotMain = useRef();
+  const refSlotEnd = useRef();
+  const refAnchor = useRef();
+  const refButton = useRef();
+  const lastInteractionRef = useRef(null);
+
+  const slotStart = useSlot(refSlotStart);
+  const slotMain = useSlot(refSlotMain);
+  const slotEnd = useSlot(refSlotEnd);
+
+  //Events
+  const dispatchOnClick = useEvent('onClick', {
+    bubbles: true,
+    composed: true,
+  });
+
+  //Methods
+  const methods = {
+    on: {
+      click: (event) => {
+        dispatchOnClick(event);
+
+        if (href && lastInteractionRef.current !== 'keyboard') {
+          trackInteraction('mouse');
+        }
+
+        lastInteractionRef.current = null;
+
+        if (href && target) {
+          refAnchor?.current?.click(event);
+        }
+      },
+      keydown: (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          lastInteractionRef.current = 'keyboard';
+
+          if (href) {
+            trackInteraction('keyboard');
+            refButton.current?.click();
+          }
+        }
+      },
+    },
+    calculate: {
+      hostClasses: () => {
+        let current = '';
+        current += fluid ? ` fluid` : '';
+        current += full ? ` full` : '';
+        setHostClasses(current);
+      },
+      classes: () => {
+        let current = '';
+        current += variant ?? '';
+        current += color ? ` ${color}` : '';
+        current += fluid ? ` fluid` : '';
+        current += full ? ` full` : '';
+        current += vertical ? ` vertical` : '';
+        setClasses(current.trim());
+      },
+    },
+  };
+
+  useEffect(() => {
+    methods.calculate.classes();
+    methods.calculate.hostClasses();
+  }, [variant, color, full, disabled, vertical, fluid]);
+
+  return (
     <host shadowDom>
+      <a ref={refAnchor} href={href} target={target} className="hidden"></a>
       <button 
-        class=${primary ? "primary" : "secondary"} 
-        onclick=${onClick}
+        ref={refButton}
+        onclick={methods.on.click}
+        class={variant} 
+        disabled={disabled}
       >
-        ${label}
+        {label || "button"} 
       </button>
     </host>
-  `;
+  );
 }
 
-button.props = {
-  label: { type: String, value: "My Button" },
-  primary: { type: Boolean, value: false },
-  onClick: { type: Function },
-};
-
-button.styles = css`
-  :host {
-    display: inline-block;
-  }
-  
-  button {
-    padding: 8px 16px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    font-family: sans-serif;
-    transition: 0.2s;
-  }
-
-  .primary {
-    background-color: blue;
-    color: white;
-  }
-
-  .secondary {
-    background-color: red;
-    color: white;
-  }
-
-  button:hover {
-    filter: brightness(1.1);
-  }
-`;
-
-export const Button = c(button);
-customElements.define("dsj-button", Button);
+Component.props = componentProps;
+Component.styles = [primaryButton];
+customElements.define('dsh-button', c(Component));

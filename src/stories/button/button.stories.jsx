@@ -3,13 +3,13 @@ import "../../components/button/button";
 
 export default {
   title: 'Atoms/Button',
-  component: 'dsj-button'
+  component: 'dsh-button'
 };
 
 export const Primary = {
   render: () => html`
     <div class="container">
-      <dsj-button id="btn-click" label="Haz clic aquí"></dsj-button>
+      <dsh-button id="buttondh" label="Guardar Cambios" primary></dsh-button>
     </div>
   `,
 };
