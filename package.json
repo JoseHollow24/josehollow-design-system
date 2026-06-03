@@ -1,11 +1,59 @@
 {
   "name": "josehollow-design-system",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "Web Components design system built with AtomicoJS",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./components/button": {
+      "import": "./dist/components/button.js"
+    },
+    "./components/icon": {
+      "import": "./dist/components/icon.js"
+    },
+    "./components/tag": {
+      "import": "./dist/components/tag.js"
+    },
+    "./components/badge": {
+      "import": "./dist/components/badge.js"
+    },
+    "./components/loading": {
+      "import": "./dist/components/loading.js"
+    },
+    "./components/checkbox": {
+      "import": "./dist/components/checkbox.js"
+    },
+    "./components/radio": {
+      "import": "./dist/components/radio.js"
+    },
+    "./components/input": {
+      "import": "./dist/components/input.js"
+    },
+    "./components/textarea": {
+      "import": "./dist/components/textarea.js"
+    },
+    "./components/select": {
+      "import": "./dist/components/select.js"
+    },
+    "./styles/tokens.css": {
+      "default": "./src/generated-tokens/tokens.css"
+    }
+  },
+  "files": [
+    "dist",
+    "src/generated-tokens/tokens.css"
+  ],
+  "sideEffects": [
+    "./dist/**/*.js"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:lib": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -50,9 +98,7 @@
   },
   "dependencies": {
     "@atomico/hooks": "^4.4.1",
-    "atomico": "^1.79.2",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "atomico": "^1.79.2"
   },
   "devDependencies": {
     "@atomico/vite": "^3.1.0",
@@ -71,6 +117,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
     "@vitest/browser": "^4.1.8",
+    "@vitest/browser-playwright": "^4.1.8",
     "@vitest/coverage-v8": "^4.1.8",
     "@web/test-runner": "^0.20.2",
     "eslint": "^9.39.1",
@@ -80,6 +127,8 @@
     "globals": "^16.5.0",
     "lit": "^3.3.2",
     "playwright": "^1.60.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "storybook": "^10.2.9",
     "style-dictionary": "^5.3.1",
     "typescript": "~5.9.3",

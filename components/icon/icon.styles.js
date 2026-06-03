@@ -1,18 +1,15 @@
 import { html, css } from 'atomico';
 import { colorTokens, sizeTokens, fontTokens } from './icon.tokens';
 
-// ?url hace que Vite resuelva la URL correcta en dev y producción
-import iconsUrl from './icons.css?url';
+// Los @font-face de FA sí cruzan el shadow DOM boundary cuando se inyectan
+// directamente en el <style> del host, pero deben venir del mismo documento.
+// Hardcodeamos la CDN URL para que funcione en cualquier entorno (dev, build, npm).
+const FA_CDN_URL = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
 
-/**
- * Inyecta el @import de FA dentro del shadow DOM.
- * Es NECESARIO que esté aquí: los estilos del documento no
- * cruzan el boundary de shadow DOM, pero los @font-face sí.
- */
 export const customProperties = (color, size) => (
   html`
     <style>
-      @import url("${iconsUrl}");
+      @import url("${FA_CDN_URL}");
       :host {
         --color: ${colorTokens[color] || colorTokens['g1']};
         --icon-size: ${sizeTokens[size] || sizeTokens['s1']};

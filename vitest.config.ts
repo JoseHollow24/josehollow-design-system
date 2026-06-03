@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitest/config';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
+import playwright from '@vitest/browser-playwright';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -24,13 +25,10 @@ export default defineConfig({
     name: 'storybook',
     browser: {
       enabled: true,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      provider: 'playwright' as any,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      instances: [{ browser: 'chromium' }] as any,
+      provider: playwright,
+      instances: [{ browser: 'chromium' }],
     },
     setupFiles: ['./vitest.setup.ts'],
-    include: ['src/stories/**/*.stories.@(js|jsx|ts|tsx)'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'lcov'],

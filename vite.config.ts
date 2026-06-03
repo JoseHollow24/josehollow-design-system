@@ -1,13 +1,14 @@
 import { defineConfig } from "vite";
 import atomico from "@atomico/vite";
-import dts from "vite-plugin-dts";
 import { resolve } from "path";
 
+const components = [
+  "button", "icon", "tag", "badge", "loading",
+  "checkbox", "radio", "input", "textarea", "select",
+];
+
 export default defineConfig({
-  plugins: [
-    atomico(),
-    dts({ insertTypesEntry: true })
-  ],
+  plugins: [atomico()],
   resolve: {
     alias: {
       "@components": resolve(__dirname, "components"),
@@ -21,19 +22,21 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.js"),
-      name: "DSH",
-      formats: ["es", "umd"],
-      fileName: (format) => `index.${format}.js`,
+      entry: {
+        index: resolve(__dirname, "src/index.js"),
+        ...Object.fromEntries(
+          components.map((name) => [
+            `components/${name}`,
+            resolve(__dirname, `components/${name}/index.js`),
+          ])
+        ),
+      },
+      formats: ["es"],
     },
     rollupOptions: {
-      external: ["atomico", "@atomico/hooks", "lit"],
       output: {
-        globals: {
-          atomico: "atomico",
-          "@atomico/hooks": "@atomico/hooks",
-          lit: "lit",
-        },
+        // Chunks compartidos (atomico runtime, sub-componentes compartidos)
+        chunkFileNames: "chunks/[name]-[hash].js",
       },
     },
   },

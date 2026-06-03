@@ -1,4 +1,4 @@
-import { c, useRef, useEffect, useState, useEvent, Fragment } from 'atomico';
+import { c, useRef, useEffect, useState, useEvent } from 'atomico';
 import { useSlot } from "@atomico/hooks/use-slot";
 
 import './assets/loading';
@@ -119,11 +119,11 @@ const Component = (props) => {
         id={id}
       >
         {!loading ? (
-          <Fragment>
+          <>
             <slot name="left" ref={refSlotStart}></slot>
             {truncatedText || <slot ref={refSlotMain}>{label}</slot>}
             <slot name="right" ref={refSlotEnd}></slot>
-          </Fragment>
+          </>
         ) : (
           <dsh-button-loading variant={variant} color={color} disabled={disabled}></dsh-button-loading>
         )}
