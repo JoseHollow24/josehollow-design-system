@@ -1,0 +1,82 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as CheckboxStories from "./checkbox.stories";
+
+<Meta of={CheckboxStories} />
+
+# dsh-checkbox
+
+Web component de checkbox del DSH Design System. Construido con Atomico sobre Shadow DOM.
+
+Ofrece control de selección binaria con soporte para todos los estados de formulario: **default**, **checked**, **disabled**, **error**, **indeterminate** y **dark mode**. Emite eventos personalizados para cambios de estado, foco y blur.
+
+## Default
+
+<Canvas of={CheckboxStories.Default} />
+
+## Checked
+
+<Canvas of={CheckboxStories.Checked} />
+
+## Disabled
+
+<Canvas of={CheckboxStories.Disabled} />
+
+## Error
+
+<Canvas of={CheckboxStories.Error} />
+
+## Indeterminate
+
+El estado `indeterminate` representa una selección parcial, ideal para checkboxes de "seleccionar todos" cuando sólo algunos elementos están marcados.
+
+<Canvas of={CheckboxStories.Indeterminate} />
+
+## Dark mode
+
+<Canvas of={CheckboxStories.DarkMode} />
+
+## Playground
+
+Interactúa con todas las propiedades del checkbox:
+
+<Canvas of={CheckboxStories.Playground} />
+<Controls of={CheckboxStories.Playground} />
+
+## Eventos
+
+<table style={{width:'100%',borderCollapse:'collapse',fontSize:'14px'}}>
+  <thead>
+    <tr style={{background:'#ebeff4'}}>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Evento</th>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Detail</th>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>checkbox-change</code></td>
+      <td style={{padding:'10px 14px'}}><code>{'{ checked, value, name, id }'}</code></td>
+      <td style={{padding:'10px 14px'}}>Se dispara al cambiar el estado del checkbox</td>
+    </tr>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>checkbox-focus</code></td>
+      <td style={{padding:'10px 14px'}}>—</td>
+      <td style={{padding:'10px 14px'}}>Se dispara al recibir el foco</td>
+    </tr>
+    <tr>
+      <td style={{padding:'10px 14px'}}><code>checkbox-blur</code></td>
+      <td style={{padding:'10px 14px'}}>—</td>
+      <td style={{padding:'10px 14px'}}>Se dispara al perder el foco</td>
+    </tr>
+  </tbody>
+</table>
+
+## React — Cómo usarlo
+
+El componente `<dsh-checkbox>` emite el evento `checkbox-change` con los datos del campo en `event.detail`.
+
+<Canvas of={CheckboxStories.ReactUsage} />
+
+El tab **Show code** muestra los dos patrones de consumo:
+- **React 19** — prop `oncheckbox-change` directamente en JSX
+- **React 18** — `useRef` + `addEventListener('checkbox-change', handler)`

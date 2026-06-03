@@ -1,0 +1,114 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as SelectStories from "./select.stories";
+
+<Meta of={SelectStories} />
+
+# dsh-select
+
+Web component de selector del DSH Design System. Construido con Atomico sobre Shadow DOM.
+
+Ofrece un selector personalizable con dos modos: **selección única** (`type="select"`) y **selección múltiple** (`type="checkbox"`). Las opciones se definen mediante el componente hijo `<dsh-select-option>`. Soporta modo **modal** para mejor experiencia en dispositivos móviles y ordenamiento **alfabético** automático.
+
+## Default — Con opciones
+
+<Canvas of={SelectStories.Default} />
+
+## Tipo checkbox
+
+El modo `type="checkbox"` permite seleccionar múltiples opciones. Emite el evento `clickCheckbox` con un array de los values seleccionados.
+
+<Canvas of={SelectStories.TipoCheckbox} />
+
+## Modal
+
+En modo `modal`, las opciones se presentan en un panel modal en lugar de un dropdown. Recomendado para listas largas o en dispositivos móviles.
+
+<Canvas of={SelectStories.Modal} />
+
+## Disabled
+
+<Canvas of={SelectStories.Disabled} />
+
+## Con error
+
+<Canvas of={SelectStories.ConError} />
+
+## Playground
+
+Interactúa con todas las propiedades del select:
+
+<Canvas of={SelectStories.Playground} />
+<Controls of={SelectStories.Playground} />
+
+## dsh-select-option
+
+El componente `<dsh-select-option>` define cada opción del selector:
+
+<table style={{width:'100%',borderCollapse:'collapse',fontSize:'14px',marginBottom:'24px'}}>
+  <thead>
+    <tr style={{background:'#ebeff4'}}>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Prop</th>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Tipo</th>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>value</code></td>
+      <td style={{padding:'10px 14px'}}>string</td>
+      <td style={{padding:'10px 14px'}}>Valor enviado en los eventos</td>
+    </tr>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>selected</code></td>
+      <td style={{padding:'10px 14px'}}>boolean</td>
+      <td style={{padding:'10px 14px'}}>Opción preseleccionada al renderizar</td>
+    </tr>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>disabled</code></td>
+      <td style={{padding:'10px 14px'}}>boolean</td>
+      <td style={{padding:'10px 14px'}}>Deshabilita la opción individualmente</td>
+    </tr>
+    <tr>
+      <td style={{padding:'10px 14px'}}><code>error</code></td>
+      <td style={{padding:'10px 14px'}}>boolean</td>
+      <td style={{padding:'10px 14px'}}>Aplica estilo de error a la opción</td>
+    </tr>
+  </tbody>
+</table>
+
+## Eventos
+
+<table style={{width:'100%',borderCollapse:'collapse',fontSize:'14px'}}>
+  <thead>
+    <tr style={{background:'#ebeff4'}}>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Evento</th>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Detail</th>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>ClickOption</code></td>
+      <td style={{padding:'10px 14px'}}>value (string)</td>
+      <td style={{padding:'10px 14px'}}>Se dispara al seleccionar una opción (type="select")</td>
+    </tr>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>clickCheckbox</code></td>
+      <td style={{padding:'10px 14px'}}>values (string[])</td>
+      <td style={{padding:'10px 14px'}}>Se dispara al cambiar la selección múltiple (type="checkbox")</td>
+    </tr>
+    <tr>
+      <td style={{padding:'10px 14px'}}><code>Selected</code></td>
+      <td style={{padding:'10px 14px'}}>—</td>
+      <td style={{padding:'10px 14px'}}>Se dispara al confirmar la selección</td>
+    </tr>
+  </tbody>
+</table>
+
+## React — Cómo usarlo
+
+El componente `<dsh-select>` emite `ClickOption` para selección única y `clickCheckbox` para selección múltiple.
+
+<Canvas of={SelectStories.ReactUsage} />
+
+El tab **Show code** muestra tres patrones: selección única en React 19, selección única con `useRef` en React 18, y selección múltiple con checkbox.

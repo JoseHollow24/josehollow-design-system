@@ -1,0 +1,49 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as BadgeStories from "./badge.stories";
+
+<Meta of={BadgeStories} />
+
+# dsh-badge
+
+Web component de badge/indicador del DSH Design System. Construido con Atomico sobre Shadow DOM.
+
+Permite mostrar indicadores de notificación, contadores y alertas visuales sobre otros elementos de la interfaz. Soporta modos de **dot** (punto de notificación), **campana** con ícono FontAwesome, y **conteo** numérico, con animaciones de pulso y vibración.
+
+## Con campana
+
+El modo `bell` muestra una campana de notificación. La prop `shake` activa una animación de vibración para llamar la atención del usuario.
+
+<Canvas of={BadgeStories.ConCampana} />
+
+## Con conteo
+
+El prop `count` muestra un número dentro del badge. Ideal para notificaciones y mensajes no leídos.
+
+<Canvas of={BadgeStories.ConConteo} />
+
+## Con pulso
+
+La prop `pulse` activa una animación de pulso radial para destacar el badge de forma sutil.
+
+<Canvas of={BadgeStories.ConPulso} />
+
+## Posiciones
+
+El badge puede posicionarse en cuatro esquinas del elemento contenedor usando la prop `position`.
+
+<Canvas of={BadgeStories.Posiciones} />
+
+## Playground
+
+Interactúa con todas las propiedades del badge:
+
+<Canvas of={BadgeStories.Playground} />
+<Controls of={BadgeStories.Playground} />
+
+## React — Cómo usarlo
+
+El componente `<dsh-badge>` es un Web Component estándar sin eventos propios, consumible directamente desde cualquier framework. Se debe posicionar dentro de un contenedor con `position: relative`.
+
+<Canvas of={BadgeStories.ReactUsage} />
+
+El tab **Show code** muestra cómo declarar el tipo TypeScript y usar el componente en React 19 y React 18.
