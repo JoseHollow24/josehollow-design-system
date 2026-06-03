@@ -1,4 +1,5 @@
 import { html } from 'lit-html';
+import { userEvent, expect } from 'storybook/test';
 import Props from '@components/button/custom-elements';
 import '@components/button';
 
@@ -128,13 +129,13 @@ declare global {
 }
 
 // ─── React 19 — soporte nativo de custom elements ───────────────────────────
-// El evento se escucha directamente con la prop onbuttonclick (lowercase)
+// El evento se escucha directamente con la prop onclick (lowercase)
 function MyButton() {
   return (
     <dsh-button
       variant="primary"
       color="blue"
-      onbuttonclick={(e) => console.log('buttonClick', e)}
+      onclick={(e) => console.log('onClick', e)}
     >
       Primary Blue
     </dsh-button>
@@ -150,9 +151,9 @@ function MyButton() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const handler = (e: Event) => console.log('buttonClick', e);
-    el.addEventListener('buttonClick', handler);
-    return () => el.removeEventListener('buttonClick', handler);
+    const handler = (e: Event) => console.log('onClick', e);
+    el.addEventListener('onClick', handler);
+    return () => el.removeEventListener('onClick', handler);
   }, []);
 
   return (
@@ -163,5 +164,38 @@ function MyButton() {
 }`,
       },
     },
+  },
+};
+
+export const Interaction = {
+  name: 'Interacción — Click',
+  render: () => html`
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;">
+      <dsh-button id="btn-click" variant="primary" color="blue">Haz click aquí</dsh-button>
+      <dsh-button id="btn-disabled" variant="primary" color="blue" disabled>Deshabilitado</dsh-button>
+      <p id="log" style="font-family:monospace;font-size:13px;color:#586264;">Esperando click...</p>
+    </div>
+  `,
+  play: async ({ canvasElement }) => {
+    await customElements.whenDefined('dsh-button');
+    const host = canvasElement.querySelector('#btn-click');
+    await expect(host).not.toBeNull();
+
+    let clicked = false;
+    host.addEventListener('onClick', () => { clicked = true; });
+
+    const innerBtn = host?.shadowRoot?.querySelector('button');
+    await expect(innerBtn).not.toBeNull();
+    await userEvent.click(innerBtn);
+
+    await expect(clicked).toBe(true);
+
+    // El botón deshabilitado no dispara eventos
+    const disabled = canvasElement.querySelector('#btn-disabled');
+    let disabledClicked = false;
+    disabled.addEventListener('onClick', () => { disabledClicked = true; });
+    const innerDisabled = disabled?.shadowRoot?.querySelector('button');
+    await userEvent.click(innerDisabled);
+    await expect(disabledClicked).toBe(false);
   },
 };

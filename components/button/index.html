@@ -120,7 +120,7 @@
     <dsh-button variant="secondary" color="blue" href="#top" target="_blank">Link Nueva Pestaña</dsh-button>
   </div>
 
-  <h2>Custom event — buttonClick</h2>
+  <h2>Custom event — onClick</h2>
   <div class="grid">
     <dsh-button variant="primary" color="blue" id="ev-primary">Primary Blue</dsh-button>
     <dsh-button variant="primary" color="yellow" id="ev-yellow">Primary Yellow</dsh-button>
@@ -128,16 +128,16 @@
     <dsh-button variant="tertiary" color="blue" id="ev-tertiary">Tertiary Blue</dsh-button>
     <dsh-button variant="primary" color="blue" disabled id="ev-disabled">Disabled</dsh-button>
   </div>
-  <div id="event-log">Haz click en un botón para ver el evento <code>buttonClick</code></div>
+  <div id="event-log">Haz click en un botón para ver el evento <code>onClick</code></div>
 
 <script>
   const log = document.querySelector('#event-log');
 
   document.querySelectorAll('dsh-button').forEach((btn) => {
-    btn.addEventListener('buttonClick', (e) => {
+    btn.addEventListener('onClick', (e) => {
       const variant = e.target.getAttribute('variant') ?? 'primary';
       const color   = e.target.getAttribute('color') ?? 'blue';
-      log.textContent = `buttonClick → variant: "${variant}", color: "${color}"`;
+      log.textContent = `onClick → variant: "${variant}", color: "${color}"`;
     });
   });
 </script>

@@ -36,6 +36,11 @@ const props = {
     reflect: true,
     value: false,
   },
+  vertical: {
+    type: Boolean,
+    reflect: true,
+    value: false,
+  },
   href: {
     type: String,
     reflect: true,

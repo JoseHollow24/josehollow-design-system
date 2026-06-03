@@ -1,0 +1,68 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as SelectStories from "./select.stories";
+
+<Meta of={SelectStories} />
+
+# dsh-select
+
+Web component de selector del DSH Design System. Construido con Atomico sobre Shadow DOM.
+
+Ofrece un selector personalizable con dos modos: **selección única** (`type="select"`) y **selección múltiple** (`type="checkbox"`). Las opciones se definen mediante el componente hijo `<dsh-select-option>`. Soporta modo **modal** para mejor experiencia en dispositivos móviles y ordenamiento **alfabético** automático.
+
+## Default — Con opciones
+
+<Canvas of={SelectStories.Default} />
+
+## Tipo checkbox
+
+El modo `type="checkbox"` permite seleccionar múltiples opciones. Emite el evento `clickCheckbox` con un array de los values seleccionados.
+
+<Canvas of={SelectStories.TipoCheckbox} />
+
+## Modal
+
+En modo `modal`, las opciones se presentan en un panel modal en lugar de un dropdown. Recomendado para listas largas o en dispositivos móviles.
+
+<Canvas of={SelectStories.Modal} />
+
+## Disabled
+
+<Canvas of={SelectStories.Disabled} />
+
+## Con error
+
+<Canvas of={SelectStories.ConError} />
+
+## Playground
+
+Interactúa con todas las propiedades del select:
+
+<Canvas of={SelectStories.Playground} />
+<Controls of={SelectStories.Playground} />
+
+## dsh-select-option
+
+El componente `<dsh-select-option>` define cada opción del selector:
+
+| Prop | Tipo | Descripción |
+|------|------|-------------|
+| `value` | string | Valor enviado en los eventos |
+| `selected` | boolean | Opción preseleccionada al renderizar |
+| `disabled` | boolean | Deshabilita la opción individualmente |
+| `error` | boolean | Aplica estilo de error a la opción |
+
+## Eventos
+
+| Evento | Detail | Descripción |
+|--------|--------|-------------|
+| `ClickOption` | value (string) | Se dispara al seleccionar una opción (type="select") |
+| `clickCheckbox` | values (string[]) | Se dispara al cambiar la selección múltiple (type="checkbox") |
+| `Selected` | — | Se dispara al confirmar la selección |
+
+## React — Cómo usarlo
+
+El componente `<dsh-select>` emite `ClickOption` para selección única y `clickCheckbox` para selección múltiple.
+
+<Canvas of={SelectStories.ReactUsage} />
+
+El tab **Show code** muestra tres patrones: selección única en React 19, selección única con `useRef` en React 18, y selección múltiple con checkbox.

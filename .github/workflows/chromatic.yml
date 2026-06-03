@@ -1,0 +1,38 @@
+name: Visual Tests — Chromatic
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  chromatic:
+    name: Publish Storybook a Chromatic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Chromatic necesita historial completo
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Publicar a Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          buildScriptName: build-storybook
+          autoAcceptChanges: main     # auto-aceptar en main
+          exitZeroOnChanges: true     # no falla CI si hay cambios visuales
+          onlyChanged: true           # solo historias que cambiaron

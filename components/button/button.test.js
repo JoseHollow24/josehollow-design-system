@@ -62,12 +62,12 @@ describe('Test dsh-button', () => {
     const component = fixtureSync(html`<dsh-button>Click me</dsh-button>`);
     await aTimeout(0);
 
-    const clickPromise = oneEvent(component, 'buttonClick');
+    const clickPromise = oneEvent(component, 'onClick');
     const btn = component.shadowRoot?.querySelector('button');
     btn.click();
 
     const event = await clickPromise;
-    expect(event.type).to.equal('buttonClick');
+    expect(event.type).to.equal('onClick');
     expect(event.bubbles).to.equal(true);
     expect(event.composed).to.equal(true);
   });
@@ -79,7 +79,7 @@ describe('Test dsh-button', () => {
     await aTimeout(0);
 
     let eventFired = false;
-    component.addEventListener('buttonClick', () => {
+    component.addEventListener('onClick', () => {
       eventFired = true;
     });
 

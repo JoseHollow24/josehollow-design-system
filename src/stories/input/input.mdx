@@ -1,0 +1,75 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as InputStories from "./input.stories";
+
+<Meta of={InputStories} />
+
+# dsh-input
+
+Web component de campo de texto del DSH Design System. Construido con Atomico sobre Shadow DOM.
+
+Ofrece un campo de entrada de texto completo con soporte para múltiples tipos, estados visuales, mensajes de ayuda y error, limpieza del valor y accesibilidad completa. Incluye funcionalidad especial para el tipo `rut` con validación de RUT chileno.
+
+## Default
+
+<Canvas of={InputStories.Default} />
+
+## Password
+
+El tipo `password` incluye un toggle para mostrar/ocultar el texto mediante un ícono de ojo.
+
+<Canvas of={InputStories.Password} />
+
+## Email
+
+<Canvas of={InputStories.Email} />
+
+## Tel
+
+<Canvas of={InputStories.Tel} />
+
+## Con error
+
+El `variant="error"` activa el estilo de error. Usa `errormessage` para mostrar el mensaje de validación.
+
+<Canvas of={InputStories.ConError} />
+
+## Con éxito
+
+El `variant="success"` comunica que el valor ingresado es válido.
+
+<Canvas of={InputStories.ConExito} />
+
+## Clearable
+
+La prop `clearable` muestra un botón para limpiar el contenido del campo. Emite el evento `clickClear` al usarse.
+
+<Canvas of={InputStories.Clearable} />
+
+## Disabled
+
+<Canvas of={InputStories.Disabled} />
+
+## Playground
+
+Interactúa con todas las propiedades del input:
+
+<Canvas of={InputStories.Playground} />
+<Controls of={InputStories.Playground} />
+
+## Eventos
+
+| Evento | Detail | Descripción |
+|--------|--------|-------------|
+| `changeInput` | nuevo valor (string) | Se dispara al cambiar el valor del campo |
+| `clickClear` | — | Se dispara al hacer click en el botón de limpieza |
+| `ValidateRut` | rut formateado | Se dispara para validar el RUT (type="rut") |
+
+## React — Cómo usarlo
+
+El componente `<dsh-input>` emite el evento `changeInput` con el nuevo valor como `event.detail`.
+
+<Canvas of={InputStories.ReactUsage} />
+
+El tab **Show code** muestra los dos patrones de consumo:
+- **React 19** — prop `onchangeinput` directamente en JSX
+- **React 18** — `useRef` + `addEventListener('changeInput', handler)`

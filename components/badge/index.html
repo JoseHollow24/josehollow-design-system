@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>DSH Badge - Demo</title>
+  <link rel="stylesheet" href="../../src/generated-tokens/tokens.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 24px;
+      background-color: #f9f9f9;
+    }
+    .grid {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .badge-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+    }
+    .badge-wrapper span {
+      font-size: 11px;
+      color: #888;
+    }
+    .icon-container {
+      position: relative;
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      background: #e5e7eb;
+      border-radius: 8px;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 32px;
+      color: #1a1a1a;
+    }
+    h2 {
+      margin-top: 32px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #777;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+  </style>
+  <script src="../icon/index.js" type="module"></script>
+  <script src="./index.js" type="module"></script>
+</head>
+<body>
+
+  <h1>DSH Badge — Demo</h1>
+
+  <h2>Con campana</h2>
+  <div class="grid">
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge bell position="right"></dsh-badge>
+      </div>
+      <span>bell</span>
+    </div>
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge bell shake position="right"></dsh-badge>
+      </div>
+      <span>bell + shake</span>
+    </div>
+  </div>
+
+  <h2>Con conteo</h2>
+  <div class="grid">
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge count="3" position="right"></dsh-badge>
+      </div>
+      <span>count: 3</span>
+    </div>
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge count="99" position="right"></dsh-badge>
+      </div>
+      <span>count: 99</span>
+    </div>
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge count="99" size="m" position="right"></dsh-badge>
+      </div>
+      <span>count: 99 (m)</span>
+    </div>
+  </div>
+
+  <h2>Con pulso</h2>
+  <div class="grid">
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge pulse position="right"></dsh-badge>
+      </div>
+      <span>pulse</span>
+    </div>
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge pulse size="m" position="right"></dsh-badge>
+      </div>
+      <span>pulse (m)</span>
+    </div>
+  </div>
+
+  <h2>Posiciones</h2>
+  <div class="grid">
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge count="1" position="left"></dsh-badge>
+      </div>
+      <span>left</span>
+    </div>
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge count="1" position="right"></dsh-badge>
+      </div>
+      <span>right</span>
+    </div>
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge count="1" position="vertical-left"></dsh-badge>
+      </div>
+      <span>vertical-left</span>
+    </div>
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge count="1" position="vertical-right"></dsh-badge>
+      </div>
+      <span>vertical-right</span>
+    </div>
+  </div>
+
+  <h2>Tamaños</h2>
+  <div class="grid">
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge count="5" size="s" position="right"></dsh-badge>
+      </div>
+      <span>s</span>
+    </div>
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge count="5" size="m" position="right"></dsh-badge>
+      </div>
+      <span>m</span>
+    </div>
+    <div class="badge-wrapper">
+      <div class="icon-container">
+        <dsh-badge count="5" size="l" position="right"></dsh-badge>
+      </div>
+      <span>l</span>
+    </div>
+  </div>
+
+</body>
+</html>

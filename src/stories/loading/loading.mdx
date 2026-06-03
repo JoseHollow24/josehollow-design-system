@@ -1,0 +1,50 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as LoadingStories from "./loading.stories";
+
+<Meta of={LoadingStories} />
+
+# dsh-loading
+
+Web component de carga del DSH Design System. Construido con Atomico sobre Shadow DOM.
+
+Proporciona una pantalla de carga configurable con soporte para **loop infinito**, **progreso determinado** y **estado de error**. Incluye slots para personalizar el mensaje y agregar acciones en el estado de error.
+
+## Loop infinito
+
+Cuando `loop` está activo, la animación se reproduce indefinidamente sin mostrar progreso.
+
+<Canvas of={LoadingStories.LoopInfinito} />
+
+## Con progreso
+
+La prop `progress` acepta valores del 0 al 100 para mostrar el avance de una operación.
+
+<Canvas of={LoadingStories.ConProgreso} />
+
+## Estado error
+
+Cuando `error` está activo, se muestra un estado de error. Usa el slot `btn-group` para incluir acciones como "Reintentar".
+
+<Canvas of={LoadingStories.EstadoError} />
+
+## Playground
+
+Interactúa con todas las propiedades del loading:
+
+<Canvas of={LoadingStories.Playground} />
+<Controls of={LoadingStories.Playground} />
+
+## Slots disponibles
+
+| Slot | Descripción |
+|------|-------------|
+| `message` | Texto o HTML que se muestra como mensaje de carga |
+| `btn-group` | Acciones (botones) visibles en el estado de error |
+
+## React — Cómo usarlo
+
+El componente `<dsh-loading>` es un Web Component estándar sin eventos propios, consumible directamente desde cualquier framework.
+
+<Canvas of={LoadingStories.ReactUsage} />
+
+El tab **Show code** muestra cómo usar el componente en los tres modos principales: loop, progreso y error.

@@ -1,5 +1,19 @@
 # Changelog — dsh-button
 
+## [1.2.0] — 2026-06-02
+
+### Added
+- Variante `vertical` para disposición vertical del botón
+- Colores `alert` y `accent` como nuevas opciones de color
+- Subcomponente `dsh-button-loading` para la animación de carga interna
+
+### Changed
+- Evento renombrado de `buttonClick` a `onClick` para consistencia con el resto del Design System
+  - JS nativo: `addEventListener("onClick", fn)`
+  - React 19: prop `onclick` en JSX
+
+---
+
 ## [1.1.0] — 2026-06-01
 
 ### Added

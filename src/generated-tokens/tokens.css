@@ -2,6 +2,9 @@
  * Do not edit directly, this file was auto-generated.
  */
 
+/* Plus Jakarta Sans — sustituto gratuito de Rawson Pro */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
 :root {
   --dsh-border-radius-0: 0px; /** 0rem */
   --dsh-border-radius-25: 2px; /** 0.125rem */
@@ -120,7 +123,7 @@
   --dsh-stroke-weight-m: 2px;
   --dsh-stroke-weight-l: 4px;
   --dsh-stroke-weight-xl: 8px;
-  --dsh-text-family-rawson-pro:  'Rawson Pro', sans-serif;
+  --dsh-text-family-rawson-pro: 'Plus Jakarta Sans', sans-serif;
   --dsh-text-line-height-base: 1rem; /** 16px */
   --dsh-text-line-height-lg: 1.25rem; /** 20px */
   --dsh-text-line-height-xl: 1.5rem; /** 24px */

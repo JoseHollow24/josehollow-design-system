@@ -1,12 +1,10 @@
-// 1. Exportar los tokens para que el usuario pueda usarlos en su JS/TS
-// export * from "./tokens";
-
-// 2. Exportar los componentes
-// Al exportar Button, exportas tanto la clase del componente como el registro
 export * from "@components/button";
-
-/**
- * Si en el futuro tienes más componentes, se vería así:
- * export * from "./components/input/input";
- * export * from "./components/card/card";
- */
+export * from "@components/icon";
+export * from "@components/tag";
+export * from "@components/badge";
+export * from "@components/loading";
+export * from "@components/checkbox";
+export * from "@components/radio";
+export * from "@components/input";
+export * from "@components/textarea";
+export * from "@components/select";

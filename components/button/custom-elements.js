@@ -119,9 +119,9 @@ const Props = {
         defaultValue: { summary: false },
       },
     },
-    buttonClick: {
-      name: 'buttonClick',
-      description: 'Evento disparado al hacer click. Escuchable con <code>addEventListener("buttonClick", fn)</code> en JS nativo o <code>onbuttonclick</code> en React 19.',
+    onClick: {
+      name: 'onClick',
+      description: 'Evento disparado al hacer click. Escuchable con <code>addEventListener("onClick", fn)</code> en JS nativo o <code>onclick</code> en React 19.',
       table: {
         category: 'Events',
         type: { summary: 'CustomEvent' },

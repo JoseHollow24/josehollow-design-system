@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>DSH Tag - Demo</title>
+  <link rel="stylesheet" href="../../src/generated-tokens/tokens.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 24px;
+      background-color: #f9f9f9;
+    }
+    .grid {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 32px;
+      color: #1a1a1a;
+    }
+    h2 {
+      margin-top: 32px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #777;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+  </style>
+  <script src="./index.js" type="module"></script>
+</head>
+<body>
+
+  <h1>DSH Tag — Demo</h1>
+
+  <h2>Informative — Subvariantes</h2>
+  <div class="grid">
+    <dsh-tag variant="informative" subvariant="success" label="Éxito" show-icon></dsh-tag>
+    <dsh-tag variant="informative" subvariant="error" label="Error" show-icon></dsh-tag>
+    <dsh-tag variant="informative" subvariant="warning" label="Advertencia" show-icon></dsh-tag>
+    <dsh-tag variant="informative" subvariant="informative" label="Informativo" show-icon></dsh-tag>
+  </div>
+
+  <h2>Informative — Sin ícono</h2>
+  <div class="grid">
+    <dsh-tag variant="informative" subvariant="success" label="Éxito"></dsh-tag>
+    <dsh-tag variant="informative" subvariant="error" label="Error"></dsh-tag>
+    <dsh-tag variant="informative" subvariant="warning" label="Advertencia"></dsh-tag>
+    <dsh-tag variant="informative" subvariant="informative" label="Informativo"></dsh-tag>
+  </div>
+
+  <h2>General</h2>
+  <div class="grid">
+    <dsh-tag variant="general" label="General"></dsh-tag>
+    <dsh-tag variant="general" label="Categoría"></dsh-tag>
+    <dsh-tag variant="general" label="Etiqueta larga de ejemplo"></dsh-tag>
+  </div>
+
+  <h2>Interactive</h2>
+  <div class="grid">
+    <dsh-tag variant="interactive" label="Filtro activo"></dsh-tag>
+    <dsh-tag variant="interactive" label="Seleccionado"></dsh-tag>
+  </div>
+
+  <h2>News</h2>
+  <div class="grid">
+    <dsh-tag variant="news" label="Nuevo"></dsh-tag>
+    <dsh-tag variant="news" label="Actualizado"></dsh-tag>
+  </div>
+
+  <h2>Menu</h2>
+  <div class="grid">
+    <dsh-tag variant="menu" label="Inicio"></dsh-tag>
+    <dsh-tag variant="menu" label="Productos"></dsh-tag>
+    <dsh-tag variant="menu" label="Contacto"></dsh-tag>
+  </div>
+
+</body>
+</html>

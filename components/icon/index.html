@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>DSH Icon - Demo</title>
+  <link rel="stylesheet" href="../../src/generated-tokens/tokens.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 24px;
+      background-color: #f9f9f9;
+    }
+    .grid {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 12px;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #eee;
+      min-width: 80px;
+    }
+    .grid-item span {
+      font-size: 11px;
+      color: #888;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 32px;
+      color: #1a1a1a;
+    }
+    h2 {
+      margin-top: 32px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #777;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+  </style>
+  <script src="./index.js" type="module"></script>
+</head>
+<body>
+
+  <h1>DSH Icon — Demo</h1>
+
+  <h2>Tamaños (s1 → s5)</h2>
+  <div class="grid">
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-bell" fa-styles="fas" size="s1"></dsh-icon>
+      <span>s1</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-bell" fa-styles="fas" size="s2"></dsh-icon>
+      <span>s2</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-bell" fa-styles="fas" size="s3"></dsh-icon>
+      <span>s3</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-bell" fa-styles="fas" size="s4"></dsh-icon>
+      <span>s4</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-bell" fa-styles="fas" size="s5"></dsh-icon>
+      <span>s5</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-bell" fa-styles="fas" size="s6"></dsh-icon>
+      <span>s6</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-bell" fa-styles="fas" size="s7"></dsh-icon>
+      <span>s7</span>
+    </div>
+  </div>
+
+  <h2>Colores</h2>
+  <div class="grid">
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-star" fa-styles="fas" size="s3" color="c1"></dsh-icon>
+      <span>c1</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-star" fa-styles="fas" size="s3" color="r1"></dsh-icon>
+      <span>r1</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-star" fa-styles="fas" size="s3" color="v1"></dsh-icon>
+      <span>v1</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-star" fa-styles="fas" size="s3" color="a1"></dsh-icon>
+      <span>a1</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-star" fa-styles="fas" size="s3" color="g1"></dsh-icon>
+      <span>g1</span>
+    </div>
+  </div>
+
+  <h2>Íconos populares</h2>
+  <div class="grid">
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-bell" fa-styles="fas" size="s3" color="c1"></dsh-icon>
+      <span>fa-bell</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-user" fa-styles="fas" size="s3" color="c1"></dsh-icon>
+      <span>fa-user</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-star" fa-styles="fas" size="s3" color="c1"></dsh-icon>
+      <span>fa-star</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-heart" fa-styles="fas" size="s3" color="r1"></dsh-icon>
+      <span>fa-heart</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-check" fa-styles="fas" size="s3" color="v1"></dsh-icon>
+      <span>fa-check</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-home" fa-styles="fas" size="s3" color="g1"></dsh-icon>
+      <span>fa-home</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-search" fa-styles="fas" size="s3" color="g1"></dsh-icon>
+      <span>fa-search</span>
+    </div>
+    <div class="grid-item">
+      <dsh-icon icon-name="fa-times" fa-styles="fas" size="s3" color="r1"></dsh-icon>
+      <span>fa-times</span>
+    </div>
+  </div>
+
+</body>
+</html>

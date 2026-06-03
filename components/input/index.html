@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>DSH Input - Demo</title>
+  <link rel="stylesheet" href="../../src/generated-tokens/tokens.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 24px;
+      background-color: #f9f9f9;
+    }
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 16px;
+      max-width: 400px;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 32px;
+      color: #1a1a1a;
+    }
+    h2 {
+      margin-top: 32px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #777;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+    #event-log {
+      margin-top: 12px;
+      padding: 12px 16px;
+      background: #1a1a1a;
+      color: #4ade80;
+      font-family: monospace;
+      font-size: 13px;
+      border-radius: 6px;
+      min-height: 40px;
+      max-width: 500px;
+    }
+  </style>
+  <script src="../icon/index.js" type="module"></script>
+  <script src="./index.js" type="module"></script>
+</head>
+<body>
+
+  <h1>DSH Input — Demo</h1>
+
+  <h2>Default (text)</h2>
+  <div class="grid">
+    <dsh-input id="i1" name="text" type="text" label="Nombre completo" placeholder="Ingresa tu nombre..."></dsh-input>
+  </div>
+
+  <h2>Password</h2>
+  <div class="grid">
+    <dsh-input id="i2" name="password" type="password" label="Contraseña" placeholder="Ingresa tu contraseña..."></dsh-input>
+  </div>
+
+  <h2>Email</h2>
+  <div class="grid">
+    <dsh-input id="i3" name="email" type="email" label="Correo electrónico" placeholder="ejemplo@correo.com"></dsh-input>
+  </div>
+
+  <h2>Tel</h2>
+  <div class="grid">
+    <dsh-input id="i4" name="tel" type="tel" label="Teléfono" placeholder="+56 9 xxxx xxxx"></dsh-input>
+  </div>
+
+  <h2>Con éxito</h2>
+  <div class="grid">
+    <dsh-input id="i5" name="success" type="text" label="Usuario" placeholder="Ingresa tu usuario..." variant="success" value="usuario123"></dsh-input>
+  </div>
+
+  <h2>Con error</h2>
+  <div class="grid">
+    <dsh-input id="i6" name="error" type="email" label="Correo electrónico" placeholder="ejemplo@correo.com" variant="error" errormessage="Formato de correo inválido" value="correo-invalido"></dsh-input>
+  </div>
+
+  <h2>Clearable</h2>
+  <div class="grid">
+    <dsh-input id="i7" name="clearable" type="text" label="Búsqueda" placeholder="Buscar..." clearable value="texto a limpiar"></dsh-input>
+  </div>
+
+  <h2>Disabled</h2>
+  <div class="grid">
+    <dsh-input id="i8" name="disabled" type="text" label="Campo deshabilitado" placeholder="No disponible" disabled value="valor fijo"></dsh-input>
+  </div>
+
+  <h2>Con helper</h2>
+  <div class="grid">
+    <dsh-input id="i9" name="helper" type="text" label="Código de seguridad" placeholder="XXXX-XXXX" helpermessage="Lo encontrarás en el reverso de tu tarjeta" maxlength="9"></dsh-input>
+  </div>
+
+  <h2>Eventos — changeInput</h2>
+  <div class="grid">
+    <dsh-input id="ev-input" name="ev" type="text" label="Escribe algo" placeholder="Observa los eventos..."></dsh-input>
+  </div>
+  <div id="event-log">Escribe en el campo para ver el evento <code>changeInput</code></div>
+
+<script>
+  const log = document.querySelector('#event-log');
+  document.querySelector('#ev-input').addEventListener('changeInput', (e) => {
+    log.textContent = `changeInput → value: "${e.detail}"`;
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>DSH Loading - Demo</title>
+  <link rel="stylesheet" href="../../src/generated-tokens/tokens.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 24px;
+      background-color: #f9f9f9;
+    }
+    .section {
+      margin-bottom: 32px;
+      padding: 24px;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 32px;
+      color: #1a1a1a;
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #777;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    button {
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      background: white;
+      font-size: 13px;
+    }
+    button:hover { background: #f0f0f0; }
+  </style>
+  <script src="./index.js" type="module"></script>
+</head>
+<body>
+
+  <h1>DSH Loading — Demo</h1>
+
+  <div class="section">
+    <h2>Loop infinito</h2>
+    <dsh-loading loop>
+      <span slot="message">Cargando datos...</span>
+    </dsh-loading>
+  </div>
+
+  <div class="section">
+    <h2>Con progreso</h2>
+    <dsh-loading id="progress-loading" progress="0">
+      <span slot="message">Procesando archivo...</span>
+    </dsh-loading>
+    <div class="controls">
+      <button onclick="setProgress(0)">0%</button>
+      <button onclick="setProgress(25)">25%</button>
+      <button onclick="setProgress(50)">50%</button>
+      <button onclick="setProgress(75)">75%</button>
+      <button onclick="setProgress(100)">100%</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Estado de error</h2>
+    <dsh-loading error>
+      <span slot="message">No se pudo completar la operación</span>
+      <div slot="btn-group" style="display:flex;gap:8px;margin-top:12px;">
+        <button onclick="alert('Reintentar')">Reintentar</button>
+        <button onclick="alert('Cancelar')">Cancelar</button>
+      </div>
+    </dsh-loading>
+  </div>
+
+<script>
+  function setProgress(value) {
+    const el = document.querySelector('#progress-loading');
+    el.setAttribute('progress', value);
+  }
+</script>
+
+</body>
+</html>

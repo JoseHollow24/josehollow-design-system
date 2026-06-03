@@ -12,8 +12,8 @@ import {
   DshSpace200,
   DshSpace300,
   DshTextLineHeightXl,
-  DshBorderRadius50,
   DshBorderRadius100,
+  DshBorderRadius300,
   DshColorMonoWhite,
   DshStrokeWeightM,
   DshColorPrimaryC0,
@@ -21,18 +21,18 @@ import {
   DshColorPrimaryC2,
   DshColorPrimaryC3,
   DshColorPrimaryC6,
+  DshColorSecondaryG1,
   DshColorSecondaryG3,
   DshColorSecondaryG5,
   DshColorSecondaryG6,
-  DshColorPrimaryA0,
-  DshColorPrimaryA1,
-  DshColorPrimaryA2,
   DshColorPrimaryA3,
+  DshColorPrimaryA4,
   DshColorPrimaryA5,
-  DshColorPrimaryA6,
+  DshColorComplementaryR1,
+  DshColorComplementaryR2,
+  DshColorComplementaryR4,
 } from '@tokens'
 
-const DshColorTransparent = 'transparent';
 
 export const baseStyles = css`
   :host {
@@ -54,7 +54,7 @@ export const baseStyles = css`
     font-family: ${DshTextFamilyRawsonPro};
     line-height: ${DshTextLineHeightXl};
     padding: ${DshSpace150} ${DshSpace300};
-    border-radius: ${DshBorderRadius50};
+    border-radius: ${DshBorderRadius300};
     border: none;
     outline: none;
     height: 48px;
@@ -76,31 +76,10 @@ export const baseStyles = css`
   button:focus-visible {
     outline: none;
   }
-  slot {
-    display: contents;
-  }
-  ::slotted(*) {
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-  }
-  button.loading {
-    pointer-events: none;
-  }
-  button.loading slot {
-    display: none;
-  }
-  .spinner {
-    width: 18px;
-    height: 18px;
-    border: 2px solid currentColor;
-    border-top-color: transparent;
-    border-radius: 50%;
-    animation: button-spin 0.65s linear infinite;
-    flex-shrink: 0;
-  }
-  @keyframes button-spin {
-    to { transform: rotate(360deg); }
+  button.vertical {
+    flex-direction: column;
+    gap: ${DshSpace50};
+    height: 76px;
   }
   .hidden {
     display: none;
@@ -146,30 +125,37 @@ export const primaryLight = css`
     outline: none;
     outline-offset: 0;
   }
-  button.primary.yellow {
+  button.primary.blue.vertical:focus {
+    border: 3px solid ${DshColorPrimaryC3};
+    padding: calc(${DshSpace150} - 3px) calc(${DshSpace200} - 3px);
+  }
+  button.primary.blue.vertical {
+    padding: ${DshSpace150} ${DshSpace200};
+  }
+  button.primary.alert {
     color: ${DshColorMonoWhite};
-    background-color: ${DshColorPrimaryA1};
+    background-color: ${DshColorComplementaryR2};
   }
-  button.primary.yellow:hover {
-    background-color: ${DshColorPrimaryA0};
+  button.primary.alert:hover {
+    background-color: ${DshColorComplementaryR1};
   }
-  button.primary.yellow:active {
+  button.primary.alert:active {
     color: ${DshColorSecondaryG5};
-    background-color: ${DshColorPrimaryA0};
-    border: 3px solid ${DshColorPrimaryA2};
-    padding: calc(${DshSpace150} - 3px) calc(${DshSpace300} - 3px);
+    background-color: ${DshColorComplementaryR1};
+    border: ${DshStrokeWeightM} solid ${DshColorComplementaryR4};
+    padding: calc(${DshSpace150} - ${DshStrokeWeightM}) calc(${DshSpace300} - ${DshStrokeWeightM});
   }
-  button.primary.yellow:focus {
+  button.primary.alert:focus {
     color: ${DshColorMonoWhite};
-    background-color: ${DshColorPrimaryA1};
-    outline: ${DshStrokeWeightM} solid ${DshColorPrimaryA2};
+    background-color: ${DshColorComplementaryR2};
+    outline: ${DshStrokeWeightM} solid ${DshColorPrimaryC2};
     outline-offset: ${DshStrokeWeightM};
   }
-  button.primary.yellow:active:focus {
+  button.primary.alert:active:focus {
     color: ${DshColorSecondaryG5};
-    background-color: ${DshColorPrimaryA0};
-    border: 3px solid ${DshColorPrimaryA2};
-    padding: calc(${DshSpace150} - 3px) calc(${DshSpace300} - 3px);
+    background-color: ${DshColorComplementaryR1};
+    border: ${DshStrokeWeightM} solid ${DshColorComplementaryR4};
+    padding: calc(${DshSpace150} - ${DshStrokeWeightM}) calc(${DshSpace300} - ${DshStrokeWeightM});
     outline: none;
     outline-offset: 0;
   }
@@ -185,7 +171,7 @@ export const primaryLight = css`
 
 export const secondaryLight = css`
   button.secondary.blue {
-    color: ${DshColorPrimaryC1};
+    color: ${DshColorSecondaryG1};
     background-color: ${DshColorMonoWhite};
     border: ${DshStrokeWeightM} solid ${DshColorPrimaryC1};
     padding: calc(${DshSpace150} - ${DshStrokeWeightM}) calc(${DshSpace300} - ${DshStrokeWeightM});
@@ -212,30 +198,38 @@ export const secondaryLight = css`
     outline: none;
     outline-offset: 0;
   }
-  button.secondary.yellow {
-    color: ${DshColorPrimaryA1};
-    background-color: ${DshColorMonoWhite};
-    border: ${DshStrokeWeightM} solid ${DshColorPrimaryA1};
+  button.secondary.blue.vertical:focus {
+    border: 3px solid ${DshColorPrimaryC3};
+    padding: calc(${DshSpace150} - 3px) calc(${DshSpace200} - 3px);
+  }
+  button.secondary.blue.vertical {
+    padding: ${DshSpace150} ${DshSpace200};
+  }
+  button.secondary.accent {
+    color: ${DshColorSecondaryG1};
+    background-color: ${DshColorPrimaryA3};
+    border: ${DshStrokeWeightM} solid ${DshColorSecondaryG1};
     padding: calc(${DshSpace150} - ${DshStrokeWeightM}) calc(${DshSpace300} - ${DshStrokeWeightM});
   }
-  button.secondary.yellow:hover {
-    background-color: ${DshColorPrimaryA6};
-    border: ${DshStrokeWeightM} solid ${DshColorPrimaryA1};
-    padding: calc(${DshSpace150} - ${DshStrokeWeightM}) calc(${DshSpace300} - ${DshStrokeWeightM});
-  }
-  button.secondary.yellow:active {
+  button.secondary.accent:hover {
     background-color: ${DshColorPrimaryA5};
-    border: 3px solid ${DshColorPrimaryA3};
+  }
+  button.secondary.accent:active {
+    color: ${DshColorSecondaryG1};
+    background-color: ${DshColorPrimaryA4};
+    border: 3px solid ${DshColorSecondaryG1};
     padding: calc(${DshSpace150} - 3px) calc(${DshSpace300} - 3px);
   }
-  button.secondary.yellow:focus {
-    background-color: ${DshColorMonoWhite};
-    outline: ${DshStrokeWeightM} solid ${DshColorPrimaryA2};
+  button.secondary.accent:focus {
+    color: ${DshColorSecondaryG1};
+    background-color: ${DshColorPrimaryA3};
+    outline: ${DshStrokeWeightM} solid ${DshColorPrimaryC2};
     outline-offset: ${DshStrokeWeightM};
   }
-  button.secondary.yellow:active:focus {
-    background-color: ${DshColorPrimaryA5};
-    border: 3px solid ${DshColorPrimaryA3};
+  button.secondary.accent:active:focus {
+    color: ${DshColorSecondaryG1};
+    background-color: ${DshColorPrimaryA4};
+    border: 3px solid ${DshColorSecondaryG1};
     padding: calc(${DshSpace150} - 3px) calc(${DshSpace300} - 3px);
     outline: none;
     outline-offset: 0;
@@ -257,7 +251,7 @@ export const tertiaryLight = css`
   }
   button.tertiary.blue {
     color: ${DshColorPrimaryC1};
-    background-color: ${DshColorTransparent};
+    background-color: transparent;
   }
   button.tertiary.blue:hover {
     background-color: ${DshColorSecondaryG6};
@@ -268,7 +262,7 @@ export const tertiaryLight = css`
   }
   button.tertiary.blue:focus {
     color: ${DshColorPrimaryC1};
-    background-color: ${DshColorTransparent};
+    background-color: transparent;
     border: ${DshStrokeWeightM} solid ${DshColorPrimaryC2};
     padding: calc(${DshSpace150} - ${DshStrokeWeightM}) calc(${DshSpace200} - ${DshStrokeWeightM});
   }
@@ -276,34 +270,43 @@ export const tertiaryLight = css`
     color: ${DshColorPrimaryC0};
     background-color: ${DshColorSecondaryG5};
   }
-  button.tertiary {
-    border-radius: ${DshBorderRadius100};
-  }
-  button.tertiary.yellow {
-    color: ${DshColorPrimaryA1};
-    background-color: ${DshColorTransparent};
-  }
-  button.tertiary.yellow:hover {
-    background-color: ${DshColorPrimaryA6};
-  }
-  button.tertiary.yellow:active {
-    color: ${DshColorPrimaryA0};
-    background-color: ${DshColorPrimaryA5};
-  }
-  button.tertiary.yellow:focus {
-    color: ${DshColorPrimaryA1};
-    background-color: ${DshColorTransparent};
-    border: ${DshStrokeWeightM} solid ${DshColorPrimaryA2};
+  button.tertiary.blue.vertical:focus {
+    border: ${DshStrokeWeightM} solid ${DshColorPrimaryC2};
     padding: calc(${DshSpace150} - ${DshStrokeWeightM}) calc(${DshSpace200} - ${DshStrokeWeightM});
   }
-  button.tertiary.yellow:active:focus {
-    color: ${DshColorPrimaryA0};
-    background-color: ${DshColorPrimaryA5};
+  button.tertiary.blue.vertical {
+    padding: ${DshSpace150} ${DshSpace200};
+  }
+  button.tertiary.white {
+    color: ${DshColorMonoWhite};
+    background-color: transparent;
+  }
+  button.tertiary.white:hover {
+    background-color: ${DshColorPrimaryC0};
+  }
+  button.tertiary.white:active {
+    color: ${DshColorSecondaryG5};
+    background-color: ${DshColorPrimaryC0};
+    border: ${DshStrokeWeightM} solid ${DshColorPrimaryC2};
+  }
+  button.tertiary.white:focus {
+    color: ${DshColorMonoWhite};
+    background-color: transparent;
+    border: ${DshStrokeWeightM} solid ${DshColorMonoWhite};
+    padding: calc(${DshSpace150} - ${DshStrokeWeightM}) calc(${DshSpace200} - ${DshStrokeWeightM});
+  }
+  button.tertiary.white:active:focus {
+    color: ${DshColorSecondaryG5};
+    background-color: ${DshColorPrimaryC0};
+    border: ${DshStrokeWeightM} solid ${DshColorPrimaryC2};
+  }
+  button.tertiary {
+    border-radius: ${DshBorderRadius100};
   }
   button.tertiary:disabled {
     color: ${DshColorSecondaryG3} !important;
     padding: ${DshSpace150} ${DshSpace200} !important;
-    background-color: ${DshColorTransparent} !important;
+    background-color: transparent !important;
     outline: none !important;
     outline-offset: 0 !important;
     border: none !important;
