@@ -1,429 +1,212 @@
 import { Meta } from "@storybook/addon-docs/blocks";
+import '@components/button';
 
 <Meta title="Design System/Bienvenida" />
 
-<div style={{
-  fontFamily: "'Rawson Pro', 'Segoe UI', sans-serif",
-  color: "#3e4545",
-  maxWidth: "900px",
-  margin: "0 auto",
-  padding: "0 0 48px"
-}}>
+<div style={{fontFamily:"'Plus Jakarta Sans','Segoe UI',sans-serif",color:"#111827",maxWidth:"960px",margin:"0 auto",padding:"0 0 64px"}}>
 
-  {/* ── Hero ──────────────────────────────────────────────────────────── */}
-  <div style={{
-    background: "linear-gradient(135deg, #00648f 0%, #0076a9 45%, #1896d3 100%)",
-    borderRadius: "16px",
-    padding: "56px 48px",
-    color: "#ffffff",
-    marginBottom: "48px",
-    position: "relative",
-    overflow: "hidden"
-  }}>
-    <div style={{
-      position: "absolute", top: "-60px", right: "-60px",
-      width: "280px", height: "280px", borderRadius: "50%",
-      background: "rgba(255,255,255,0.06)"
-    }} />
-    <div style={{
-      position: "absolute", bottom: "-80px", left: "30%",
-      width: "200px", height: "200px", borderRadius: "50%",
-      background: "rgba(255,255,255,0.04)"
-    }} />
-    <div style={{ position: "relative", zIndex: 1 }}>
-      <div style={{
-        display: "inline-block",
-        background: "rgba(255,255,255,0.15)",
-        backdropFilter: "blur(8px)",
-        borderRadius: "8px",
-        padding: "6px 14px",
-        fontSize: "12px",
-        fontWeight: "600",
-        letterSpacing: "1.5px",
-        textTransform: "uppercase",
-        marginBottom: "20px"
-      }}>
-        v1.0.0 — Alfa
-      </div>
-      <h1 style={{
-        fontSize: "42px", fontWeight: "700",
-        margin: "0 0 12px", lineHeight: "1.15",
-        textShadow: "0 2px 8px rgba(0,0,0,0.15)"
-      }}>
-        DSH Design System
-      </h1>
-      <p style={{
-        fontSize: "18px", fontWeight: "400",
-        margin: "0 0 32px", opacity: "0.9",
-        maxWidth: "560px", lineHeight: "1.6"
-      }}>
-        Librería de componentes Web Components construidos con Atomico sobre Shadow DOM.
-        Tokens, átomos y documentación en un solo lugar.
-      </p>
-      <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-        {[
-          { label: "Web Components", icon: "🧩" },
-          { label: "Atomico", icon: "⚛️" },
-          { label: "Shadow DOM", icon: "🔒" },
-          { label: "Design Tokens", icon: "🎨" },
-          { label: "React 19", icon: "⚡" },
-        ].map(({ label, icon }) => (
-          <span key={label} style={{
-            background: "rgba(255,255,255,0.18)",
-            borderRadius: "6px", padding: "6px 14px",
-            fontSize: "13px", fontWeight: "500",
-            display: "flex", alignItems: "center", gap: "6px"
-          }}>
-            {icon} {label}
-          </span>
-        ))}
-      </div>
+{/* ─── HERO ─────────────────────────────────────────────────────────────── */}
+<div style={{background:"linear-gradient(140deg,#00648f 0%,#0076a9 50%,#008ec4 100%)",borderRadius:"20px",padding:"60px 52px 52px",color:"#fff",marginBottom:"52px",position:"relative",overflow:"hidden"}}>
+  <div style={{position:"absolute",top:"-80px",right:"-80px",width:"320px",height:"320px",borderRadius:"50%",background:"rgba(255,255,255,0.05)",pointerEvents:"none"}} />
+  <div style={{position:"absolute",bottom:"-100px",left:"25%",width:"240px",height:"240px",borderRadius:"50%",background:"rgba(255,255,255,0.04)",pointerEvents:"none"}} />
+  <div style={{position:"relative",zIndex:1}}>
+    <div style={{display:"inline-flex",alignItems:"center",gap:"6px",background:"rgba(255,255,255,0.18)",backdropFilter:"blur(6px)",borderRadius:"100px",padding:"5px 14px",fontSize:"11px",fontWeight:"700",letterSpacing:"2px",textTransform:"uppercase",marginBottom:"24px",color:"#ffffff"}}>
+      <span style={{width:"6px",height:"6px",borderRadius:"50%",background:"#7dd3fc",display:"inline-block"}} />
+      v1.0.0 — Alfa pública
     </div>
-  </div>
-
-  {/* ── Stats ──────────────────────────────────────────────────────────── */}
-  <div style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-    gap: "16px",
-    marginBottom: "48px"
-  }}>
-    {[
-      { value: "11", label: "Componentes", sub: "átomos" },
-      { value: "200+", label: "Tokens", sub: "de diseño" },
-      { value: "50+", label: "Stories", sub: "documentadas" },
-      { value: "100%", label: "Shadow DOM", sub: "encapsulado" },
-    ].map(({ value, label, sub }) => (
-      <div key={label} style={{
-        background: "#f6f7f7",
-        borderRadius: "12px",
-        padding: "24px 20px",
-        textAlign: "center",
-        border: "1px solid #dfe3e5"
-      }}>
-        <div style={{ fontSize: "32px", fontWeight: "700", color: "#0076a9", lineHeight: 1 }}>
-          {value}
-        </div>
-        <div style={{ fontSize: "14px", fontWeight: "600", color: "#3e4545", marginTop: "6px" }}>
-          {label}
-        </div>
-        <div style={{ fontSize: "12px", color: "#a8b3b7", marginTop: "2px" }}>
-          {sub}
-        </div>
-      </div>
-    ))}
-  </div>
-
-  {/* ── Componentes ──────────────────────────────────────────────────── */}
-  <div style={{ marginBottom: "48px" }}>
-    <h2 style={{
-      fontSize: "22px", fontWeight: "700",
-      color: "#3e4545", margin: "0 0 8px",
-      display: "flex", alignItems: "center", gap: "10px"
-    }}>
-      🧩 Componentes disponibles
-    </h2>
-    <p style={{ color: "#586264", fontSize: "14px", margin: "0 0 20px" }}>
-      Todos construidos con Atomico, consumibles desde cualquier framework o HTML vanilla.
-    </p>
-    <div style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-      gap: "12px"
-    }}>
+    <h1 style={{fontSize:"48px",fontWeight:"800",margin:"0 0 16px",lineHeight:"1.1",letterSpacing:"-1px",color:"#ffffff"}}>
+      DSH Design System
+    </h1>
+    <div style={{fontSize:"19px",fontWeight:"400",marginBottom:"36px",maxWidth:"540px",lineHeight:"1.65",color:"#ffffff"}}>
+      Librería de Web Components construida con <strong>AtomicoJS</strong> sobre Shadow DOM.
+      Tokens semánticos, átomos reutilizables y documentación viva en un solo lugar.
+    </div>
+    <div style={{display:"flex",gap:"10px",flexWrap:"wrap"}}>
       {[
-        { tag: "dsh-button",      icon: "🖱️",  desc: "Botón con 3 variantes y loading" },
-        { tag: "dsh-icon",        icon: "✨",  desc: "Ícono Font Awesome en 7 tamaños" },
-        { tag: "dsh-icon-button", icon: "🔘",  desc: "Botón compacto con ícono" },
-        { tag: "dsh-tag",         icon: "🏷️",  desc: "Etiqueta informativa/interactiva" },
-        { tag: "dsh-badge",       icon: "🔔",  desc: "Badge con contador y pulso" },
-        { tag: "dsh-loading",     icon: "⏳",  desc: "Animación de carga con SVG" },
-        { tag: "dsh-checkbox",    icon: "☑️",  desc: "Checkbox con tema claro/oscuro" },
-        { tag: "dsh-radio",       icon: "🔵",  desc: "Radio + grupo con navegación" },
-        { tag: "dsh-input",       icon: "⌨️",  desc: "Input texto, password, RUT, tel" },
-        { tag: "dsh-textarea",    icon: "📝",  desc: "Textarea con auto-resize" },
-        { tag: "dsh-select",      icon: "📋",  desc: "Select con dropdown y checkbox" },
-      ].map(({ tag, icon, desc }) => (
-        <div key={tag} style={{
-          background: "#ffffff",
-          border: "1px solid #dfe3e5",
-          borderRadius: "10px",
-          padding: "16px",
-          transition: "box-shadow .15s",
-          cursor: "default"
-        }}>
-          <div style={{ fontSize: "20px", marginBottom: "8px" }}>{icon}</div>
-          <code style={{
-            display: "block",
-            fontSize: "12px", fontWeight: "600",
-            color: "#0076a9", marginBottom: "4px",
-            fontFamily: "monospace"
-          }}>
-            {"<"}{tag}{">"}
-          </code>
-          <p style={{ fontSize: "12px", color: "#586264", margin: 0, lineHeight: "1.4" }}>
-            {desc}
-          </p>
-        </div>
+        {label:"Web Components"},
+        {label:"AtomicoJS"},
+        {label:"Shadow DOM"},
+        {label:"Design Tokens"},
+        {label:"React 19+"},
+      ].map(({label}) => (
+        <span key={label} style={{background:"rgba(255,255,255,0.15)",border:"1px solid rgba(255,255,255,0.3)",borderRadius:"100px",padding:"6px 16px",fontSize:"13px",fontWeight:"500",color:"#ffffff"}}>
+          {label}
+        </span>
       ))}
     </div>
   </div>
+</div>
 
-  {/* ── Quick Start ──────────────────────────────────────────────────── */}
-  <div style={{ marginBottom: "48px" }}>
-    <h2 style={{
-      fontSize: "22px", fontWeight: "700",
-      color: "#3e4545", margin: "0 0 20px",
-      display: "flex", alignItems: "center", gap: "10px"
-    }}>
-      🚀 Quick start
-    </h2>
-    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-      {[
-        {
-          step: "1",
-          title: "Registrar el componente",
-          code: `// Importar en el entry de tu app (registra el custom element)
+{/* ─── MÉTRICAS ────────────────────────────────────────────────────────── */}
+<div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(180px,1fr))",gap:"16px",marginBottom:"56px"}}>
+  {[
+    {value:"10",label:"Componentes",sub:"átomos listos"},
+    {value:"200+",label:"Design Tokens",sub:"variables semánticas"},
+    {value:"50+",label:"Stories",sub:"documentadas"},
+    {value:"0",label:"Dependencias",sub:"externas de UI"},
+  ].map(({value,label,sub}) => (
+    <div key={label} style={{background:"#fff",border:"1px solid #e5e7eb",borderRadius:"16px",padding:"28px 24px",textAlign:"center",boxShadow:"0 1px 4px rgba(0,0,0,0.06)"}}>
+      <div style={{fontSize:"36px",fontWeight:"800",color:"#0076a9",lineHeight:"1",letterSpacing:"-1px"}}>{value}</div>
+      <div style={{fontSize:"14px",fontWeight:"700",color:"#111827",marginTop:"8px"}}>{label}</div>
+      <div style={{fontSize:"12px",color:"#9ca3af",marginTop:"3px"}}>{sub}</div>
+    </div>
+  ))}
+</div>
+
+{/* ─── COMPONENTES ─────────────────────────────────────────────────────── */}
+<div style={{marginBottom:"56px"}}>
+  <h2 style={{fontSize:"24px",fontWeight:"800",color:"#111827",margin:"0 0 6px",letterSpacing:"-0.5px"}}>
+    Componentes disponibles
+  </h2>
+  <div style={{fontSize:"15px",color:"#6b7280",margin:"0 0 24px",lineHeight:"1.5"}}>
+    Todos construidos con <strong>AtomicoJS</strong>. Consumibles desde HTML vanilla, React, Vue o cualquier framework.
+  </div>
+  <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",gap:"12px"}}>
+    {[
+      {tag:"dsh-button",   icon:"🖱️", desc:"3 variantes · colores · loading"},
+      {tag:"dsh-icon",     icon:"✨", desc:"Font Awesome · 7 tamaños"},
+      {tag:"dsh-tag",      icon:"🏷️", desc:"Informativa · interactiva · news"},
+      {tag:"dsh-badge",    icon:"🔔", desc:"Contador · campana · pulso"},
+      {tag:"dsh-loading",  icon:"⏳", desc:"Spinner · progreso · error"},
+      {tag:"dsh-checkbox", icon:"☑️", desc:"Claro · oscuro · indeterminate"},
+      {tag:"dsh-radio",    icon:"🔵", desc:"Solo · grupo con teclado"},
+      {tag:"dsh-input",    icon:"⌨️", desc:"Texto · password · RUT · tel"},
+      {tag:"dsh-textarea", icon:"📝", desc:"Auto-resize · contador"},
+      {tag:"dsh-select",   icon:"📋", desc:"Dropdown · checkbox · modal"},
+    ].map(({tag,icon,desc}) => (
+      <div key={tag} style={{background:"#fff",border:"1px solid #e5e7eb",borderRadius:"12px",padding:"18px 16px",boxShadow:"0 1px 3px rgba(0,0,0,0.05)"}}>
+        <div style={{fontSize:"22px",marginBottom:"10px"}}>{icon}</div>
+        <div style={{fontFamily:"'Fira Code','Cascadia Code',monospace",fontSize:"12px",fontWeight:"600",color:"#0076a9",marginBottom:"6px"}}>{"<"}{tag}{">"}</div>
+        <div style={{fontSize:"12px",color:"#6b7280",lineHeight:"1.5"}}>{desc}</div>
+      </div>
+    ))}
+  </div>
+</div>
+
+{/* ─── QUICK START ─────────────────────────────────────────────────────── */}
+<div style={{marginBottom:"56px"}}>
+  <h2 style={{fontSize:"24px",fontWeight:"800",color:"#111827",margin:"0 0 24px",letterSpacing:"-0.5px"}}>
+    Quick start
+  </h2>
+  <div style={{display:"flex",flexDirection:"column",gap:"12px"}}>
+    {[
+      {
+        step:"1",title:"Registrar el componente",
+        code:`// Importar en el entry point de tu app
 import 'own-design-system/components/button';
 import 'own-design-system/components/icon';`
-        },
-        {
-          step: "2",
-          title: "Usar en HTML o JSX",
-          code: `<!-- HTML nativo -->
-<dsh-button variant="primary" color="blue">Haz click</dsh-button>
+      },
+      {
+        step:"2",title:"Usar en HTML / JSX",
+        code:`<!-- HTML nativo -->
+<dsh-button variant="primary" color="blue">Hola mundo</dsh-button>
 
-// JSX (React 19 — soporte nativo de custom elements)
-<dsh-button variant="secondary" onclick={(e) => console.log(e)}>
-  Botón
+// React 19 — soporte nativo de custom elements
+<dsh-button variant="secondary" onclick={e => console.log(e)}>
+  Secundario
 </dsh-button>`
-        },
-        {
-          step: "3",
-          title: "Escuchar eventos",
-          code: `// JS nativo
+      },
+      {
+        step:"3",title:"Escuchar eventos",
+        code:`// JS nativo
 document.querySelector('dsh-button')
-  .addEventListener('onClick', (e) => console.log(e));
+  .addEventListener('onClick', e => console.log(e));
 
-// React 18 (ref + addEventListener)
+// React 18 — useRef + addEventListener
 const ref = useRef(null);
 useEffect(() => {
   ref.current?.addEventListener('onClick', handler);
 }, []);`
-        },
-      ].map(({ step, title, code }) => (
-        <div key={step} style={{
-          background: "#1e2a35",
-          borderRadius: "12px",
-          overflow: "hidden",
-          border: "1px solid #2d3d4a"
-        }}>
-          <div style={{
-            background: "#0076a9",
-            padding: "10px 20px",
-            display: "flex", alignItems: "center", gap: "10px"
-          }}>
-            <span style={{
-              background: "rgba(255,255,255,0.25)",
-              color: "#fff", borderRadius: "50%",
-              width: "24px", height: "24px",
-              display: "inline-flex", alignItems: "center", justifyContent: "center",
-              fontSize: "12px", fontWeight: "700", flexShrink: 0
-            }}>
-              {step}
-            </span>
-            <span style={{ color: "#ffffff", fontSize: "14px", fontWeight: "600" }}>
-              {title}
-            </span>
-          </div>
-          <pre style={{
-            margin: 0,
-            padding: "20px",
-            fontSize: "13px",
-            color: "#a8d8ea",
-            lineHeight: "1.7",
-            overflowX: "auto",
-            fontFamily: "'Fira Code', 'Cascadia Code', monospace",
-            whiteSpace: "pre"
-          }}>
-            {code}
-          </pre>
+      },
+    ].map(({step,title,code}) => (
+      <div key={step} style={{borderRadius:"14px",overflow:"hidden",border:"1px solid #1e3a4a"}}>
+        <div style={{background:"#0c2333",padding:"12px 20px",display:"flex",alignItems:"center",gap:"12px",borderBottom:"1px solid #1e3a4a"}}>
+          <div style={{background:"#0076a9",color:"#ffffff",borderRadius:"50%",width:"22px",height:"22px",display:"inline-flex",alignItems:"center",justifyContent:"center",fontSize:"11px",fontWeight:"800",flexShrink:0}}>{step}</div>
+          <span style={{color:"#f1f5f9",fontSize:"13px",fontWeight:"600"}}>{title}</span>
         </div>
-      ))}
-    </div>
+        <pre style={{margin:0,padding:"20px 24px",fontSize:"13px",color:"#7dd3fc",lineHeight:"1.8",overflowX:"auto",background:"#0f172a",fontFamily:"'Fira Code','Cascadia Code',monospace",whiteSpace:"pre"}}>{code}</pre>
+      </div>
+    ))}
   </div>
+</div>
 
-  {/* ── Paleta de colores principal ───────────────────────────────────── */}
-  <div style={{ marginBottom: "48px" }}>
-    <h2 style={{
-      fontSize: "22px", fontWeight: "700",
-      color: "#3e4545", margin: "0 0 8px",
-      display: "flex", alignItems: "center", gap: "10px"
-    }}>
-      🎨 Paleta principal
-    </h2>
-    <p style={{ color: "#586264", fontSize: "14px", margin: "0 0 20px" }}>
-      Todos los colores están disponibles como design tokens con prefijo <code>Dsh</code>.
-      Explora la sección <strong>Tokens</strong> para verlos completos.
-    </p>
-    <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-      {[
-        {
-          label: "Primary C — Azul",
-          colors: [
-            { name: "C0", hex: "#00648f" }, { name: "C1", hex: "#0076a9" },
-            { name: "C2", hex: "#008ec4" }, { name: "C3", hex: "#1896d3" },
-            { name: "C4", hex: "#4ebce3" }, { name: "C5", hex: "#92d5f1" },
-            { name: "C6", hex: "#def4ff" },
-          ]
-        },
-        {
-          label: "Primary A — Ámbar",
-          colors: [
-            { name: "A0", hex: "#8c5d00" }, { name: "A1", hex: "#b37400" },
-            { name: "A2", hex: "#d59608" }, { name: "A3", hex: "#f9be00" },
-            { name: "A4", hex: "#fad271" }, { name: "A5", hex: "#fde1a7" },
-            { name: "A6", hex: "#fff3de" },
-          ]
-        },
-        {
-          label: "Secondary G — Grises",
-          colors: [
-            { name: "G0", hex: "#2d3232" }, { name: "G1", hex: "#3e4545" },
-            { name: "G2", hex: "#586264" }, { name: "G3", hex: "#a8b3b7" },
-            { name: "G4", hex: "#c9d0d3" }, { name: "G5", hex: "#dfe3e5" },
-            { name: "G6", hex: "#f6f7f7" },
-          ]
-        },
-      ].map(({ label, colors }) => (
-        <div key={label}>
-          <p style={{ fontSize: "12px", fontWeight: "600", color: "#586264", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-            {label}
-          </p>
-          <div style={{ display: "flex", gap: "4px", flexWrap: "wrap" }}>
-            {colors.map(({ name, hex }) => (
-              <div key={name} style={{ textAlign: "center", width: "72px" }}>
-                <div style={{
-                  height: "40px", borderRadius: "8px",
-                  background: hex,
-                  border: "1px solid rgba(0,0,0,0.08)",
-                  marginBottom: "4px"
-                }} />
-                <div style={{ fontSize: "10px", fontWeight: "600", color: "#3e4545" }}>{name}</div>
-                <div style={{ fontSize: "10px", color: "#a8b3b7", fontFamily: "monospace" }}>{hex}</div>
+{/* ─── PALETA ──────────────────────────────────────────────────────────── */}
+<div style={{marginBottom:"56px"}}>
+  <h2 style={{fontSize:"24px",fontWeight:"800",color:"#111827",margin:"0 0 6px",letterSpacing:"-0.5px"}}>
+    Paleta de colores
+  </h2>
+  <div style={{fontSize:"15px",color:"#6b7280",margin:"0 0 28px"}}>
+    Tokens con prefijo <code style={{background:"#f3f4f6",padding:"2px 7px",borderRadius:"5px",fontSize:"13px",color:"#0076a9"}}>Dsh</code> disponibles en JS y CSS custom properties.
+  </div>
+  <div style={{display:"flex",flexDirection:"column",gap:"20px"}}>
+    {[
+      {label:"Primary C — Azul corporativo",colors:[
+        {name:"C0",hex:"#00648f"},{name:"C1",hex:"#0076a9"},{name:"C2",hex:"#008ec4"},
+        {name:"C3",hex:"#1896d3"},{name:"C4",hex:"#4ebce3"},{name:"C5",hex:"#92d5f1"},{name:"C6",hex:"#def4ff"},
+      ]},
+      {label:"Primary A — Ámbar / Acento",colors:[
+        {name:"A0",hex:"#8c5d00"},{name:"A1",hex:"#b37400"},{name:"A2",hex:"#d59608"},
+        {name:"A3",hex:"#f9be00"},{name:"A4",hex:"#fad271"},{name:"A5",hex:"#fde1a7"},{name:"A6",hex:"#fff3de"},
+      ]},
+      {label:"Secondary G — Grises",colors:[
+        {name:"G1",hex:"#3e4545"},{name:"G2",hex:"#586264"},{name:"G3",hex:"#a8b3b7"},
+        {name:"G4",hex:"#c9d0d3"},{name:"G5",hex:"#dfe3e5"},{name:"G6",hex:"#f6f7f7"},
+      ]},
+    ].map(({label,colors}) => (
+      <div key={label}>
+        <div style={{fontSize:"11px",fontWeight:"700",color:"#374151",marginBottom:"10px",textTransform:"uppercase",letterSpacing:"0.8px"}}>{label}</div>
+        <div style={{display:"flex",gap:"6px",flexWrap:"wrap"}}>
+          {colors.map(({name,hex}) => {
+            const isDark = ["#00648f","#0076a9","#008ec4","#1896d3","#8c5d00","#b37400","#d59608","#3e4545","#586264"].includes(hex);
+            return (
+              <div key={name} style={{textAlign:"center",width:"76px"}}>
+                <div style={{height:"44px",borderRadius:"10px",background:hex,border:"1px solid rgba(0,0,0,0.07)",marginBottom:"6px",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                  <span style={{fontSize:"9px",fontWeight:"700",color:isDark?"rgba(255,255,255,0.8)":"rgba(0,0,0,0.5)",letterSpacing:"0.3px"}}>{name}</span>
+                </div>
+                <div style={{fontSize:"10px",color:"#9ca3af",fontFamily:"monospace"}}>{hex}</div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
-      ))}
+      </div>
+    ))}
+  </div>
+</div>
+
+{/* ─── AUTOR ───────────────────────────────────────────────────────────── */}
+<div style={{borderTop:"1px solid #e5e7eb",paddingTop:"48px",display:"flex",gap:"28px",alignItems:"flex-start",flexWrap:"wrap"}}>
+  <img
+    src="https://github.com/JoseHollow24.png"
+    alt="José Aguilar"
+    style={{width:"88px",height:"88px",borderRadius:"50%",border:"3px solid #e5e7eb",objectFit:"cover",flexShrink:0}}
+  />
+  <div style={{flex:1,minWidth:"240px"}}>
+    <div style={{fontSize:"11px",fontWeight:"700",color:"#0076a9",textTransform:"uppercase",letterSpacing:"1.5px",marginBottom:"6px"}}>
+      Creado por
+    </div>
+    <div style={{fontSize:"22px",fontWeight:"800",color:"#111827",marginBottom:"10px",letterSpacing:"-0.5px"}}>
+      José de Jesús Aguilar Pérez
+    </div>
+    <div style={{fontSize:"15px",color:"#4b5563",lineHeight:"1.7",marginBottom:"24px",maxWidth:"520px"}}>
+      Desarrollador Frontend especializado en sistemas de diseño, Web Components y arquitecturas de UI modernas.
+      Este design system es un proyecto personal construido sobre <strong>AtomicoJS</strong> para explorar
+      componentes reutilizables, encapsulados y accesibles sin dependencias de framework.
+    </div>
+    <div style={{display:"flex",gap:"12px",flexWrap:"wrap",alignItems:"center"}}>
+      <dsh-button variant="primary" color="blue" href="https://github.com/JoseHollow24" target="_blank">
+        GitHub
+      </dsh-button>
+      <dsh-button variant="secondary" color="blue" href="https://www.linkedin.com/in/jose-de-jesus-aguilar-p%C3%A9rez-b0b20113a/" target="_blank">
+        LinkedIn
+      </dsh-button>
     </div>
   </div>
+</div>
 
-  {/* ── Autor ─────────────────────────────────────────────────────────── */}
-  <div style={{
-    background: "linear-gradient(135deg, #f6f7f7 0%, #ebeff4 100%)",
-    border: "1px solid #dfe3e5",
-    borderRadius: "16px",
-    padding: "32px",
-    display: "flex",
-    gap: "28px",
-    alignItems: "flex-start",
-    flexWrap: "wrap"
-  }}>
-    <img
-      src="https://github.com/JoseHollow24.png"
-      alt="José Aguilar"
-      style={{
-        width: "96px", height: "96px",
-        borderRadius: "50%",
-        border: "3px solid #0076a9",
-        flexShrink: 0,
-        objectFit: "cover"
-      }}
-    />
-    <div style={{ flex: 1, minWidth: "220px" }}>
-      <div style={{
-        display: "inline-block",
-        background: "#0076a9", color: "#fff",
-        borderRadius: "6px", padding: "3px 10px",
-        fontSize: "11px", fontWeight: "600",
-        letterSpacing: "1px", textTransform: "uppercase",
-        marginBottom: "10px"
-      }}>
-        Creado por
-      </div>
-      <h3 style={{
-        fontSize: "22px", fontWeight: "700",
-        color: "#00648f", margin: "0 0 6px"
-      }}>
-        José de Jesús Aguilar Pérez
-      </h3>
-      <p style={{
-        fontSize: "14px", color: "#586264",
-        margin: "0 0 16px", lineHeight: "1.6", maxWidth: "480px"
-      }}>
-        Desarrollador Frontend con experiencia en sistemas de diseño, Web Components y
-        frameworks modernos. Este design system es un proyecto personal para explorar
-        arquitecturas de componentes reutilizables y accesibles.
-      </p>
-      <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-        <a
-          href="https://github.com/JoseHollow24"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-flex", alignItems: "center", gap: "8px",
-            background: "#24292e", color: "#ffffff",
-            borderRadius: "8px", padding: "9px 18px",
-            fontSize: "13px", fontWeight: "600",
-            textDecoration: "none",
-            transition: "opacity .15s"
-          }}
-        >
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-          </svg>
-          GitHub
-        </a>
-        <a
-          href="https://www.linkedin.com/in/jose-de-jesus-aguilar-p%C3%A9rez-b0b20113a/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-flex", alignItems: "center", gap: "8px",
-            background: "#0077b5", color: "#ffffff",
-            borderRadius: "8px", padding: "9px 18px",
-            fontSize: "13px", fontWeight: "600",
-            textDecoration: "none",
-            transition: "opacity .15s"
-          }}
-        >
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-  </div>
-
-  {/* ── Footer ───────────────────────────────────────────────────────── */}
-  <div style={{
-    marginTop: "40px",
-    paddingTop: "24px",
-    borderTop: "1px solid #dfe3e5",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    flexWrap: "wrap",
-    gap: "8px"
-  }}>
-    <span style={{ fontSize: "13px", color: "#a8b3b7" }}>
-      DSH Design System — v1.0.0 alfa
-    </span>
-    <span style={{ fontSize: "13px", color: "#a8b3b7" }}>
-      Construido con Atomico · Storybook · Vite
-    </span>
-  </div>
+{/* ─── FOOTER ──────────────────────────────────────────────────────────── */}
+<div style={{marginTop:"48px",paddingTop:"20px",borderTop:"1px solid #f3f4f6",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"8px"}}>
+  <span style={{fontSize:"13px",color:"#6b7280",fontWeight:"500"}}>DSH Design System — v1.0.0 alfa</span>
+  <span style={{fontSize:"13px",color:"#6b7280"}}>AtomicoJS · Storybook · Vite · Plus Jakarta Sans</span>
+</div>
 
 </div>

@@ -1,4 +1,5 @@
 import '../src/generated-tokens/tokens.css';
+import './docs-override.css';
 
 /** @type { import('@storybook/web-components-vite').Preview } */
 const preview = {

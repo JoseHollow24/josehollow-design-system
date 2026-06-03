@@ -11,8 +11,17 @@ const Component = (props) => {
     vertical, full, fluid, loading, width, id, name: btnName, parentComponent,
   } = props;
 
-  const [classes, setClasses] = useState('');
-  const [hostClasses, setHostClasses] = useState('');
+  // Inicializar con los valores reales evita el flash de texto negro en el primer render
+  const buildClasses = (v, c, fl, fu, ve) => {
+    let s = v ?? 'primary';
+    if (c)  s += ` ${c}`;
+    if (fl) s += ' fluid';
+    if (fu) s += ' full';
+    if (ve) s += ' vertical';
+    return s.trim();
+  };
+  const [classes, setClasses] = useState(() => buildClasses(variant, color, fluid, full, vertical));
+  const [hostClasses, setHostClasses] = useState(() => `${fluid ? 'fluid' : ''} ${full ? 'full' : ''}`.trim());
   const [truncatedText, setTruncatedText] = useState('');
 
   const refSlotStart = useRef();
@@ -68,21 +77,8 @@ const Component = (props) => {
       },
     },
     calculate: {
-      hostClasses: () => {
-        let current = '';
-        current += fluid ? ` fluid` : '';
-        current += full ? ` full` : '';
-        setHostClasses(current.trim());
-      },
-      classes: () => {
-        let current = '';
-        current += variant ?? '';
-        current += color ? ` ${color}` : '';
-        current += fluid ? ` fluid` : '';
-        current += full ? ` full` : '';
-        current += vertical ? ` vertical` : '';
-        setClasses(current.trim());
-      },
+      hostClasses: () => setHostClasses(`${fluid ? 'fluid' : ''} ${full ? 'full' : ''}`.trim()),
+      classes: () => setClasses(buildClasses(variant, color, fluid, full, vertical)),
     },
   };
 

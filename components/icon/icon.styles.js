@@ -1,9 +1,18 @@
 import { html, css } from 'atomico';
 import { colorTokens, sizeTokens, fontTokens } from './icon.tokens';
 
+// ?url hace que Vite resuelva la URL correcta en dev y producción
+import iconsUrl from './icons.css?url';
+
+/**
+ * Inyecta el @import de FA dentro del shadow DOM.
+ * Es NECESARIO que esté aquí: los estilos del documento no
+ * cruzan el boundary de shadow DOM, pero los @font-face sí.
+ */
 export const customProperties = (color, size) => (
   html`
     <style>
+      @import url("${iconsUrl}");
       :host {
         --color: ${colorTokens[color] || colorTokens['g1']};
         --icon-size: ${sizeTokens[size] || sizeTokens['s1']};
@@ -35,7 +44,7 @@ export const mainStyles = [
     }
 
     .content.font-hidden {
-      visibility: hidden;
+      opacity: 0;
     }
   `,
 ];

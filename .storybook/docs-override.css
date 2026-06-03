@@ -1,0 +1,20 @@
+/*
+ * Override del color de texto predeterminado que Storybook inyecta en <p>
+ * mediante su clase generada (.css-xxxxxx :where(p:not(...))).
+ *
+ * Esa regla tiene especificidad (0,1,0).
+ * Este selector (.sbdocs-content p) tiene especificidad (0,1,1) → gana.
+ *
+ * Al forzar `color: inherit`, cada <p> toma el color de su contenedor:
+ *  - hero (color: white) → texto blanco
+ *  - resto del documento → texto oscuro del tema
+ */
+.sbdocs-content p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p) {
+  color: inherit;
+}
+
+/* Mismo override para strong/em dentro de párrafos heredados */
+.sbdocs-content p strong,
+.sbdocs-content p em {
+  color: inherit;
+}

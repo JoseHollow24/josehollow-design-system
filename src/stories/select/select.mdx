@@ -44,20 +44,66 @@ Interactúa con todas las propiedades del select:
 
 El componente `<dsh-select-option>` define cada opción del selector:
 
-| Prop | Tipo | Descripción |
-|------|------|-------------|
-| `value` | string | Valor enviado en los eventos |
-| `selected` | boolean | Opción preseleccionada al renderizar |
-| `disabled` | boolean | Deshabilita la opción individualmente |
-| `error` | boolean | Aplica estilo de error a la opción |
+<table style={{width:'100%',borderCollapse:'collapse',fontSize:'14px',marginBottom:'24px'}}>
+  <thead>
+    <tr style={{background:'#ebeff4'}}>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Prop</th>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Tipo</th>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>value</code></td>
+      <td style={{padding:'10px 14px'}}>string</td>
+      <td style={{padding:'10px 14px'}}>Valor enviado en los eventos</td>
+    </tr>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>selected</code></td>
+      <td style={{padding:'10px 14px'}}>boolean</td>
+      <td style={{padding:'10px 14px'}}>Opción preseleccionada al renderizar</td>
+    </tr>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>disabled</code></td>
+      <td style={{padding:'10px 14px'}}>boolean</td>
+      <td style={{padding:'10px 14px'}}>Deshabilita la opción individualmente</td>
+    </tr>
+    <tr>
+      <td style={{padding:'10px 14px'}}><code>error</code></td>
+      <td style={{padding:'10px 14px'}}>boolean</td>
+      <td style={{padding:'10px 14px'}}>Aplica estilo de error a la opción</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Eventos
 
-| Evento | Detail | Descripción |
-|--------|--------|-------------|
-| `ClickOption` | value (string) | Se dispara al seleccionar una opción (type="select") |
-| `clickCheckbox` | values (string[]) | Se dispara al cambiar la selección múltiple (type="checkbox") |
-| `Selected` | — | Se dispara al confirmar la selección |
+<table style={{width:'100%',borderCollapse:'collapse',fontSize:'14px'}}>
+  <thead>
+    <tr style={{background:'#ebeff4'}}>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Evento</th>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Detail</th>
+      <th style={{padding:'10px 14px',textAlign:'left',borderBottom:'2px solid #c9d0d3'}}>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>ClickOption</code></td>
+      <td style={{padding:'10px 14px'}}>value (string)</td>
+      <td style={{padding:'10px 14px'}}>Se dispara al seleccionar una opción (type="select")</td>
+    </tr>
+    <tr style={{borderBottom:'1px solid #dfe3e5'}}>
+      <td style={{padding:'10px 14px'}}><code>clickCheckbox</code></td>
+      <td style={{padding:'10px 14px'}}>values (string[])</td>
+      <td style={{padding:'10px 14px'}}>Se dispara al cambiar la selección múltiple (type="checkbox")</td>
+    </tr>
+    <tr>
+      <td style={{padding:'10px 14px'}}><code>Selected</code></td>
+      <td style={{padding:'10px 14px'}}>—</td>
+      <td style={{padding:'10px 14px'}}>Se dispara al confirmar la selección</td>
+    </tr>
+  </tbody>
+</table>
 
 ## React — Cómo usarlo
 
