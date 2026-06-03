@@ -8,7 +8,8 @@ const __dirname = dirname(__filename);
 /** @type { import('@storybook/web-components-vite').StorybookConfig } */
 const config = {
   stories: [
-    '../src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../components/**/*.stories.@(js|jsx|ts|tsx)',
+    '../components/**/*.mdx',
     '../src/**/*.mdx',
   ],
 
@@ -33,7 +34,7 @@ const config = {
   viteFinal: async (configVite) =>
     mergeConfig(configVite, {
       plugins: [
-        ...(await import('@atomico/vite')).default({ storybook: ['src/**/**/*'] }),
+        ...(await import('@atomico/vite')).default({ storybook: ['src/**/**/*', 'components/**/**/*'] }),
       ],
       resolve: {
         alias: {
