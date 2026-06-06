@@ -7,6 +7,7 @@ import {
   DshShadowM,
   DshShadowS,
   DshSpace0,
+  DshSpace50,
   DshSpace100,
   DshSpace200,
   DshSpace300,
