@@ -1,84 +1,110 @@
 {
   "name": "josehollow-design-system",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Web Components design system built with AtomicoJS",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
+  "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/src/index.d.ts",
       "import": "./dist/index.js"
     },
     "./components/button": {
+      "types": "./dist/components/button/index.d.ts",
       "import": "./dist/components/button.js"
     },
     "./components/icon": {
+      "types": "./dist/components/icon/index.d.ts",
       "import": "./dist/components/icon.js"
     },
     "./components/tag": {
+      "types": "./dist/components/tag/index.d.ts",
       "import": "./dist/components/tag.js"
     },
     "./components/badge": {
+      "types": "./dist/components/badge/index.d.ts",
       "import": "./dist/components/badge.js"
     },
     "./components/loading": {
+      "types": "./dist/components/loading/index.d.ts",
       "import": "./dist/components/loading.js"
     },
     "./components/checkbox": {
+      "types": "./dist/components/checkbox/index.d.ts",
       "import": "./dist/components/checkbox.js"
     },
     "./components/radio": {
+      "types": "./dist/components/radio/index.d.ts",
       "import": "./dist/components/radio.js"
     },
     "./components/input": {
+      "types": "./dist/components/input/index.d.ts",
       "import": "./dist/components/input.js"
     },
     "./components/textarea": {
+      "types": "./dist/components/textarea/index.d.ts",
       "import": "./dist/components/textarea.js"
     },
     "./components/select": {
+      "types": "./dist/components/select/index.d.ts",
       "import": "./dist/components/select.js"
     },
     "./components/accordions": {
+      "types": "./dist/components/accordions/index.d.ts",
       "import": "./dist/components/accordions.js"
     },
     "./components/message": {
+      "types": "./dist/components/message/index.d.ts",
       "import": "./dist/components/message.js"
     },
     "./components/pagination": {
+      "types": "./dist/components/pagination/index.d.ts",
       "import": "./dist/components/pagination.js"
     },
     "./components/direct-access": {
+      "types": "./dist/components/direct-access/index.d.ts",
       "import": "./dist/components/direct-access.js"
     },
     "./components/progress-bar": {
+      "types": "./dist/components/progress-bar/index.d.ts",
       "import": "./dist/components/progress-bar.js"
     },
     "./components/menu-vertical": {
+      "types": "./dist/components/menu-vertical/index.d.ts",
       "import": "./dist/components/menu-vertical.js"
     },
     "./components/modal": {
+      "types": "./dist/components/modal/index.d.ts",
       "import": "./dist/components/modal.js"
     },
     "./components/card-headline": {
+      "types": "./dist/components/card-headline/index.d.ts",
       "import": "./dist/components/card-headline.js"
     },
     "./components/card-details": {
+      "types": "./dist/components/card-details/index.d.ts",
       "import": "./dist/components/card-details.js"
     },
     "./components/card-deal": {
+      "types": "./dist/components/card-deal/index.d.ts",
       "import": "./dist/components/card-deal.js"
     },
     "./components/card-highlight": {
+      "types": "./dist/components/card-highlight/index.d.ts",
       "import": "./dist/components/card-highlight.js"
     },
     "./components/file-uploader": {
+      "types": "./dist/components/file-uploader/index.d.ts",
       "import": "./dist/components/file-uploader.js"
     },
     "./components/datepicker": {
+      "types": "./dist/components/datepicker/index.d.ts",
       "import": "./dist/components/datepicker.js"
     },
     "./components/timepicker": {
+      "types": "./dist/components/timepicker/index.d.ts",
       "import": "./dist/components/timepicker.js"
     },
     "./styles/tokens.css": {
@@ -183,12 +209,15 @@
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
     "playwright:install": "npx playwright install chromium"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@atomico/hooks": "^4.4.1",
-    "atomico": "^1.79.2",
+    "atomico": "^1.79.2"
+  },
+  "dependencies": {
     "moment": "^2.30.1"
   },
   "devDependencies": {
+    "@atomico/hooks": "^4.4.1",
     "@atomico/vite": "^3.1.0",
     "@chromatic-com/storybook": "^5.2.1",
     "@eslint/js": "^9.39.1",
@@ -208,6 +237,7 @@
     "@vitest/browser-playwright": "^4.1.8",
     "@vitest/coverage-v8": "^4.1.8",
     "@web/test-runner": "^0.20.2",
+    "atomico": "^1.79.2",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",

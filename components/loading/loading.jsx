@@ -32,14 +32,14 @@ function LoadingComponent({ loop, progress, animationtime, error, size }) {
       >
         {/* Pista de fondo */}
         <circle
-          className="track"
+          class="track"
           cx="50" cy="50" r={RADIUS}
           stroke-width="var(--stroke-width, 5)"
           fill="none"
         />
         {/* Arco de progreso */}
         <circle
-          className={`arc${spinning ? ' spinning' : ''}`}
+          class={`arc${spinning ? ' spinning' : ''}`}
           cx="50" cy="50" r={RADIUS}
           stroke-width="var(--stroke-width, 5)"
           fill="none"

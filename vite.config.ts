@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import atomico from "@atomico/vite";
 import { resolve } from "path";
+import dts from "vite-plugin-dts";
 
 const components = [
   "button", "icon", "tag", "badge", "loading",
@@ -12,7 +13,14 @@ const components = [
 ];
 
 export default defineConfig({
-  plugins: [atomico()],
+  plugins: [
+    atomico(),
+    dts({
+      include: ["src/**/*", "components/**/*"],
+      tsconfigPath: "./tsconfig.app.json",
+      compilerOptions: { allowJs: true },
+    }),
+  ],
   resolve: {
     alias: {
       "@components": resolve(__dirname, "components"),
@@ -22,7 +30,7 @@ export default defineConfig({
   esbuild: {
     jsxFactory: "h",
     jsxFragment: "Fragment",
-    jsxInject: `import { h } from 'atomico'`,
+    jsxInject: `import { h, Fragment } from 'atomico'`,
   },
   build: {
     lib: {
@@ -38,8 +46,8 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
+      external: ["atomico", "@atomico/hooks"],
       output: {
-        // Chunks compartidos (atomico runtime, sub-componentes compartidos)
         chunkFileNames: "chunks/[name]-[hash].js",
       },
     },
