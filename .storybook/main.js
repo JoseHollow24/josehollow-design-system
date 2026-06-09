@@ -8,9 +8,8 @@ const __dirname = dirname(__filename);
 /** @type { import('@storybook/web-components-vite').StorybookConfig } */
 const config = {
   stories: [
-    '../components/**/*.stories.@(js|jsx|ts|tsx)',
-    '../components/**/*.mdx',
-    '../src/**/*.mdx',
+    '../stories/**/*.stories.@(js|jsx|ts|tsx)',
+    '../stories/**/*.mdx',
   ],
 
   addons: [

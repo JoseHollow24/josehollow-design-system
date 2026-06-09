@@ -7,7 +7,7 @@ const Props = {
   faStyles: {
     type: String,
     reflect: true,
-    value: 'fal',
+    value: 'fas',
   },
   link: {
     type: String,

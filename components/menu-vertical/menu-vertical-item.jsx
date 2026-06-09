@@ -55,7 +55,7 @@ function MenuVerticalItemComponent({
       subItemsRef.current?.classList.remove('active');
       menuSubItemSlotList.forEach((slot) => { slot.active = false; });
     }
-  }, [isMobile, isTablet, active]);
+  }, [isMobile, isTablet, active, menuSubItemSlotList.length]);
 
   useEffect(() => {
     const handler = (e) => {

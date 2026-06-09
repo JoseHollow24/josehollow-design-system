@@ -18,7 +18,7 @@ function MenuVerticalComponent() {
   const [heightMenu, setHeightMenu] = useState('0');
   const [headerText, setHeaderText] = useState('Menú');
   const [currentItemIdentifier, setCurrentItemIdentifier] = useState();
-  const { width } = useWindowDimensions();
+  const { width, isMobile, isTablet } = useWindowDimensions();
 
   const closeCurrentMenuItem = () => {
     const current = menuItemSlotList.find(
@@ -65,7 +65,7 @@ function MenuVerticalComponent() {
   useListener(backButtonRef, 'onClick', () => closeCurrentMenuItem());
 
   return (
-    <host className={!openMobile ? 'closed' : ''} shadowDom>
+    <host className={!openMobile && (isMobile || isTablet) ? 'closed' : ''} shadowDom>
       <div className="menu" ref={menuContentRef}>
         <div className="menu__header">
           <div className="menu__header-desktop">
