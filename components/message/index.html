@@ -6,27 +6,57 @@
     <title>dsh-message — Dev</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../src/generated-tokens/tokens.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
       body { font-family: 'Plus Jakarta Sans', sans-serif; padding: 32px; background: #f6f7f7; }
       section { margin-bottom: 16px; }
       h2 { font-size: 13px; color: #586264; margin: 0 0 8px; text-transform: uppercase; }
+      .theme-toggle {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        width: 56px;
+        height: 56px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 20px;
+        background: #252b3b;
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        z-index: 9999;
+        transition: all 0.2s ease;
+      }
+
+      .theme-toggle:hover {
+        transform: scale(1.05);
+      }
+
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        padding: 32px;
+        background: #f6f7f7;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      h2 {
+        font-size: 13px;
+        color: inherit;
+        margin: 0 0 8px;
+        text-transform: uppercase;
+      }
     </style>
     <script type="module" src="./index.js"></script>
   </head>
   <body>
     <section>
       <h2>Info</h2>
-      <dsh-message variant="info">
-        <div slot="title"><h3 style="margin:0">Información</h3></div>
-        <div slot="content"><p style="margin:4px 0 0">Mensaje informativo estándar.</p></div>
-        <div slot="footer"><a href="/">Ver más</a></div>
-      </dsh-message>
     </section>
     <section>
       <h2>Informative</h2>
-      <dsh-message variant="informative" close-button>
+      <dsh-message close-button>
         <div slot="title"><h4 style="margin:0">Informativo</h4></div>
-        <div slot="content"><p style="margin:4px 0 0">Mensaje con fondo azul.</p></div>
+        <div slot="content"><p style="margin:4px 0 0">Mensaje por defecto.</p></div>
       </dsh-message>
     </section>
     <section>
@@ -55,8 +85,35 @@
       <dsh-message variant="important">
         <div slot="title"><h4 style="margin:0">Destacado</h4></div>
         <div slot="content"><p style="margin:4px 0 0">Mensaje con borde punteado.</p></div>
-        <div slot="footer"><a href="/">Más información</a></div>
       </dsh-message>
     </section>
+
+    <button id="theme-toggle" class="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <script>
+      const button = document.getElementById('theme-toggle');
+      let darkMode = false;
+
+      button.addEventListener('click', () => {
+        darkMode = !darkMode;
+
+        document.body.style.backgroundColor = darkMode ? '#252b3b' : '#f6f7f7';
+        document.body.style.color = darkMode ? '#ffffff' : '#000000';
+
+        document.querySelectorAll('dsh-message').forEach((element) => {
+          if (darkMode) {
+            element.setAttribute('dark-mode', '');
+          } else {
+            element.removeAttribute('dark-mode');
+          }
+        });
+
+        button.innerHTML = darkMode
+          ? '<i class="fas fa-sun"></i>'
+          : '<i class="fas fa-moon"></i>';
+      });
+    </script>
   </body>
 </html>

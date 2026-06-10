@@ -10,31 +10,16 @@ import {
   DshColorComplementaryN1,
 } from '@tokens';
 
-const tokens = {
-  info: {
-    backgroundColor: '#ffffff',
-    border: '1px solid #ffffff',
-  },
-  informative: {
-    backgroundColor: DshColorPrimaryC6,
-    border: `1px solid ${DshColorSecondaryX1}`,
-  },
-  success: {
-    backgroundColor: DshColorComplementaryT6,
-    border: `1px solid ${DshColorComplementaryT1}`,
-  },
-  error: {
-    backgroundColor: DshColorComplementaryR6,
-    border: `1px solid ${DshColorComplementaryR1}`,
-  },
-  warning: {
-    backgroundColor: DshColorComplementaryN6,
-    border: `1px solid ${DshColorComplementaryN1}`,
-  },
-  important: {
-    backgroundColor: DshColorSecondaryX6,
-    border: `1px solid ${DshColorSecondaryX1}`,
-  },
-};
+export const bgTokens = {
+  success:  DshColorComplementaryT6,
+  error:    DshColorComplementaryR6,
+  warning:  DshColorComplementaryN6,
+  important: DshColorSecondaryX6,
+}
 
-export default tokens;
+export const borderTokens = {
+  success: `1px solid ${DshColorComplementaryT1}`,
+  error: `1px solid ${DshColorComplementaryR1}`,
+  warning: `1px solid ${DshColorComplementaryN1}`,
+  important: `1px solid ${DshColorSecondaryX1}`,
+}

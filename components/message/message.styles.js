@@ -14,16 +14,21 @@ import {
   DshSpace600,
   DshSpaceN400,
 } from '@tokens';
-import tokens from './message.tokens';
+import {bgTokens, borderTokens} from './message.tokens';
 
-export const customProperties = (variant, closeButton) =>
-  html`
+export const customProperties = (variant, closeButton, darkMode) => {
+  const  themebg = darkMode ? '#252b3b' : '#ffffff';
+  const  themeborder = darkMode ? '#3a4050' : '#ffffff';
+  const themecolor = darkMode ? '#e8eaed' : '#000000';
+
+   return html`
     <style>
       :host {
-        --background-color: ${tokens[variant]?.backgroundColor || tokens.info.backgroundColor};
-        --border-color: ${tokens[variant]?.border || tokens.info.border};
+        --background-color: ${ variant ? bgTokens[variant] : themebg };
+        --border-color: ${ variant ? borderTokens[variant] :  `1px solid ${themeborder}` };
         --margin: ${DshSpace0};
         --side-padding: ${closeButton ? '40px' : '0px'};
+        --color: ${variant ? '#000000' : themecolor};
         animation: 0.4s startAnimation;
         animation-fill-mode: forwards;
       }
@@ -36,7 +41,8 @@ export const customProperties = (variant, closeButton) =>
         to { opacity: 0; }
       }
     </style>
-  `;
+  `
+};
 
 export const styles = css`
   :host {
@@ -53,7 +59,6 @@ export const styles = css`
     animation-fill-mode: forwards;
   }
 
-  /* ── SHARED ─────────────────────────────────────────── */
   .content {
     opacity: 1;
     height: fit-content;
@@ -63,6 +68,7 @@ export const styles = css`
     box-sizing: border-box;
     background-color: var(--background-color);
     border: var(--border-color);
+    color: var(--color);
     box-shadow: ${DshShadowS};
     width: 100%;
     min-width: 288px;
@@ -91,7 +97,6 @@ export const styles = css`
     padding-right: var(--side-padding, 0px);
   }
 
-  /* ── TITLE / CONTENT / FOOTER slot sections ─────────── */
   .slot-title ::slotted([slot='title']) {
     font-weight: 650;
     font-size: 1.125rem;
@@ -113,7 +118,6 @@ export const styles = css`
     gap: ${DshSpace300};
   }
 
-  /* ── CLOSE BUTTON ────────────────────────────────────── */
   .icon-close {
     padding: ${DshSpace0};
     width: 48px;
@@ -139,9 +143,7 @@ export const styles = css`
     background-color: ${DshColorSecondaryG5};
   }
 
-  /* ── IMPORTANT variant ───────────────────────────────── */
   :host([variant='important']) .content {
-    border-style: dashed;
     padding: ${DshSpace300} ${DshSpace200};
     flex-direction: row;
     align-items: flex-start;
@@ -164,7 +166,6 @@ export const styles = css`
     margin-top: ${DshSpace300};
   }
 
-  /* ── DESKTOP ─────────────────────────────────────────── */
   @media (min-width: 768px) {
     :host(:not([variant='important'])) .content {
       min-width: inherit;

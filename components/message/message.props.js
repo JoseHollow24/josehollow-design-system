@@ -2,7 +2,7 @@ const Props = {
   variant: {
     type: String,
     reflect: true,
-    value: 'info',
+    value: '',
   },
   closeButton: {
     type: Boolean,
@@ -28,6 +28,11 @@ const Props = {
     type: String,
     reflect: true,
     value: '',
+  },
+   darkMode: {
+    type: Boolean,
+    reflect: true,
+    value: false,
   },
 };
 

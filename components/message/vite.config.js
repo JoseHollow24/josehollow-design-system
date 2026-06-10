@@ -18,6 +18,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@tokens': resolve(__dirname, '../../src/generated-tokens/tokens.js'),
+      '@components': resolve(__dirname, '../../components'),
     },
   },
   server: {
