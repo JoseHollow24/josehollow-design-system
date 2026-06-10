@@ -10,14 +10,14 @@ import {
   DshColorComplementaryN1,
 } from '@tokens';
 
-export const bgTokens = {
+export const variantBgTokens = {
   success:  DshColorComplementaryT6,
   error:    DshColorComplementaryR6,
   warning:  DshColorComplementaryN6,
   important: DshColorSecondaryX6,
 }
 
-export const borderTokens = {
+export const variantBorderTokens = {
   success: `1px solid ${DshColorComplementaryT1}`,
   error: `1px solid ${DshColorComplementaryR1}`,
   warning: `1px solid ${DshColorComplementaryN1}`,

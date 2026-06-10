@@ -5,13 +5,13 @@ import {
   DshColorPrimaryC1,
 } from '@tokens';
 
-export const borderTokens = {
+export const variantBorderTokens = {
   default: `${DshColorPrimaryC1}`,
   success: `${DshColorComplementaryV1}`,
   error: `${DshColorComplementaryR2}`,
 };
 
-export const bgTokens = {
+export const variantBgTokens = {
   default: `${DshColorSecondaryG1}`,
   success: `${DshColorComplementaryV1}`,
   error: `${DshColorComplementaryR2}`,

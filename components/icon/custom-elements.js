@@ -31,6 +31,7 @@ const Props = {
     color: {
       name: 'color',
       description: 'Token de color del Design System aplicado al ícono (ej: g1, c1, r1, v1, a1)',
+      control: { type: 'text' },
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: 'g1' },

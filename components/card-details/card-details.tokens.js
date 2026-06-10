@@ -23,4 +23,4 @@ const Palette = {
   apv: { line: DshColorComplementaryL1, icon: DshColorComplementaryL2 },
 };
 
-export default Palette;
+export const segmentPalette = Palette;

@@ -11,20 +11,20 @@ import {
   DshColorSecondaryG6,
 } from '@tokens';
 
-export const bgTokens = {
+export const segmentBgTokens = {
   default: DshColorSecondaryX1,
   blue: DshColorPrimaryC6,
   purple: DshColorSecondaryM6,
   slate: DshColorSecondaryG6,
 };
 
-export const fontTokens = {
+export const segmentFontTokens = {
   small: DshTextSizeBase,
   default: DshTextSizeLg,
   large: DshTextSizeXl,
 };
 
-export const lhTokens = {
+export const segmentLhTokens = {
   small: DshTextLineHeightLg,
   default: DshTextLineHeightXl,
   large: DshTextLineHeight2xl,

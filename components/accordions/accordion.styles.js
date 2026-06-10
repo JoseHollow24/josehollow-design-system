@@ -7,7 +7,7 @@ import {
   DshSpace200,
   DshSpace300,
 } from '@tokens';
-import { getTokenBg, getTokenBorderLeft, getTokenBorder, getTokenBorderBottom } from './accordion.tokens';
+import { accordionTokens } from './accordion.tokens';
 
 export const customProperties = (variant, type) => {
   const other = type === 'secundario' || variant === 'transversal';
@@ -21,11 +21,11 @@ export const customProperties = (variant, type) => {
         --align-items-header-right: center;
       }
       .content-accordion-item {
-        background: ${getTokenBg(type, variant)};
-        border-left: 8px solid ${getTokenBorderLeft(variant, type)};
-        border-top: ${other ? '1px' : '0'} solid ${getTokenBorder(type, variant)};
-        border-bottom: ${other ? '1px' : '0'} solid ${getTokenBorderBottom(type, variant)};
-        border-right: 1px solid ${getTokenBorder(type, variant)};
+        background: ${variant === 'transversal' ? accordionTokens.borderbottom.background : (accordionTokens[type]?.background || 'transparent')};
+        border-left: 8px solid ${(type === 'borderbottom' || type === 'none') ? accordionTokens[type].borderColorLeft : (accordionTokens[variant]?.borderColorLeft || DshColorPrimaryC1)};
+        border-top: ${other ? '1px' : '0'} solid ${variant === 'transversal' ? accordionTokens.borderbottom.borderColor : (accordionTokens[type]?.borderColor || 'transparent')};
+        border-bottom: ${other ? '1px' : '0'} solid ${variant === 'transversal' ? accordionTokens.borderbottom.borderColorBottom : (accordionTokens[type]?.borderColorBottom || 'transparent')};
+        border-right: 1px solid ${variant === 'transversal' ? accordionTokens.borderbottom.borderColor : (accordionTokens[type]?.borderColor || 'transparent')};
         border-radius: ${type === 'borderbottom' || variant === 'transversal' ? DshSpace0 : DshSpace100};
         border-style: ${type === 'borderbottom' || variant === 'transversal' ? 'dashed' : 'solid'};
       }

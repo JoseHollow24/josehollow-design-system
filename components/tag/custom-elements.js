@@ -47,6 +47,7 @@ const Props = {
     color: {
       name: 'color',
       description: 'Token de color del Design System para personalización adicional',
+      control: { type: 'text' },
       table: { type: { summary: 'string' } },
     },
     state: {

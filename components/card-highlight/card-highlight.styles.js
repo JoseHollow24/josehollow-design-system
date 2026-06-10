@@ -15,7 +15,7 @@ import {
   DshTextWeight500,
   DshTextWeight600,
 } from '@tokens';
-import { bgTokens, iconBgTokens } from './card-highlight.tokens.js';
+import { colorBgTokens, colorIconBgTokens } from './card-highlight.tokens.js';
 
 export const customProperties = (color, index) => {
   return html`
@@ -23,8 +23,8 @@ export const customProperties = (color, index) => {
       :host {
         --zIndex: ${index};
         --font-family: ${DshTextFamilyRawsonPro};
-        --background: ${bgTokens[color]};
-        --background-icon: ${iconBgTokens[color]};
+        --background: ${colorBgTokens[color]};
+        --background-icon: ${colorIconBgTokens[color]};
         --weight-bold: ${DshTextWeight600};
         --weight-regular: ${DshTextWeight400};
         --weight-medium: ${DshTextWeight500};

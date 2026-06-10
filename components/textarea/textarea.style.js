@@ -15,7 +15,7 @@ import {
   DshColorSecondaryX4,
   DshTextSizeBase,
 } from '@tokens';
-import { borderColorTokens, ColorFooterCounter } from './textarea.tokens';
+import { stateBorderTokens, stateCounterTokens } from './textarea.tokens';
 
 export const customProperties = (state, disabled, rows) => html`
   <style>
@@ -23,10 +23,10 @@ export const customProperties = (state, disabled, rows) => html`
       --font-family: ${DshTextFamilyRawsonPro};
       --font-weight-regular: ${DshTextWeight400};
       --font-weight-medium: ${DshTextWeight500};
-      --border-color: ${disabled ? DshColorSecondaryX4 : borderColorTokens[state]};
+      --border-color: ${disabled ? DshColorSecondaryX4 : stateBorderTokens[state]};
       --color: ${disabled ? DshColorSecondaryG3 : DshColorSecondaryG1};
       --color-footer: ${disabled ? DshColorSecondaryG3 : DshColorSecondaryG1};
-      --color-footer-counter: ${disabled ? DshColorSecondaryX4 : ColorFooterCounter[state]};
+      --color-footer-counter: ${disabled ? DshColorSecondaryX4 : stateCounterTokens[state]};
       --color-title: ${disabled ? DshColorSecondaryG3 : DshColorMonoBlack};
       --background: ${disabled ? DshColorSecondaryX6 : DshColorMonoWhite};
       --border-color-hover: ${DshColorSecondaryX1};

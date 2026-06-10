@@ -15,7 +15,7 @@ import {
   DshTextLineHeightXl,
   DshTextLineHeight2xl,
 } from '@tokens';
-import Palette from './card-details.tokens';
+import { segmentPalette } from './card-details.tokens';
 
 export const cardDetailsStyles = css`
   :host {
@@ -46,13 +46,13 @@ export const lineStyles = css`
     height: 100%;
   }
 
-  :host(.transversal) { background-color: ${Palette.transversal.line}; }
-  :host(.blue) { background-color: ${Palette.blue.line}; }
-  :host(.purple) { background-color: ${Palette.purple.line}; }
-  :host(.slate) { background-color: ${Palette.slate.line}; }
-  :host(.cav) { background-color: ${Palette.cav.line}; }
-  :host(.ffmm) { background-color: ${Palette.ffmm.line}; }
-  :host(.apv) { background-color: ${Palette.apv.line}; }
+  :host(.transversal) { background-color: ${segmentPalette.transversal.line}; }
+  :host(.blue) { background-color: ${segmentPalette.blue.line}; }
+  :host(.purple) { background-color: ${segmentPalette.purple.line}; }
+  :host(.slate) { background-color: ${segmentPalette.slate.line}; }
+  :host(.cav) { background-color: ${segmentPalette.cav.line}; }
+  :host(.ffmm) { background-color: ${segmentPalette.ffmm.line}; }
+  :host(.apv) { background-color: ${segmentPalette.apv.line}; }
 `;
 
 export const headerStyles = css`
@@ -163,7 +163,7 @@ export const footerStyles = css`
 
 export const iconStyles = css`
   :host {
-    background-color: ${Palette.background};
+    background-color: ${segmentPalette.background};
     border-radius: ${DshSpace500};
     width: ${DshSpace600};
     min-width: ${DshSpace600};
@@ -174,13 +174,13 @@ export const iconStyles = css`
     justify-content: center;
   }
 
-  :host(.transversal) { color: ${Palette.transversal.icon}; }
-  :host(.blue) { color: ${Palette.blue.icon}; }
-  :host(.purple) { color: ${Palette.purple.icon}; }
-  :host(.slate) { color: ${Palette.slate.icon}; }
-  :host(.cav) { color: ${Palette.cav.icon}; }
-  :host(.ffmm) { color: ${Palette.ffmm.icon}; }
-  :host(.apv) { color: ${Palette.apv.icon}; }
+  :host(.transversal) { color: ${segmentPalette.transversal.icon}; }
+  :host(.blue) { color: ${segmentPalette.blue.icon}; }
+  :host(.purple) { color: ${segmentPalette.purple.icon}; }
+  :host(.slate) { color: ${segmentPalette.slate.icon}; }
+  :host(.cav) { color: ${segmentPalette.cav.icon}; }
+  :host(.ffmm) { color: ${segmentPalette.ffmm.icon}; }
+  :host(.apv) { color: ${segmentPalette.apv.icon}; }
 `;
 
 export const imageStyles = css`

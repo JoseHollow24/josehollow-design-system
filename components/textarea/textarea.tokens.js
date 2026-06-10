@@ -8,7 +8,7 @@ import {
   DshColorSecondaryX4,
 } from '@tokens';
 
-export const borderColorTokens = {
+export const stateBorderTokens = {
   default: `${DshColorPrimaryC1}`,
   completed: `${DshColorPrimaryC2}`,
   error: `${DshColorComplementaryR2}`,
@@ -17,7 +17,7 @@ export const borderColorTokens = {
   disabled: `${DshColorSecondaryX4}`,
 };
 
-export const ColorFooterCounter = {
+export const stateCounterTokens = {
   default: `${DshColorSecondaryG1}`,
   completed: `${DshColorSecondaryG1}`,
   error: `${DshColorComplementaryR2}`,

@@ -22,20 +22,20 @@ import {
   DshColorSecondaryG3,
   DshShadowM,
 } from '@tokens';
-import { bgTokens, fontTokens, lhTokens } from './card-headline.tokens';
+import { segmentBgTokens, segmentFontTokens, segmentLhTokens } from './card-headline.tokens';
 
 export const customProperties = (segment, descriptionFont, descriptionFontMobile) => html`
   <style>
     :host {
       --text-align: 'center';
-      --background-color: ${bgTokens[segment] || bgTokens.default};
-      --font-size: ${fontTokens[descriptionFontMobile] || fontTokens.default};
-      --line-height: ${lhTokens[descriptionFontMobile] || lhTokens.default};
+      --background-color: ${segmentBgTokens[segment] || segmentBgTokens.default};
+      --font-size: ${segmentFontTokens[descriptionFontMobile] || segmentFontTokens.default};
+      --line-height: ${segmentLhTokens[descriptionFontMobile] || segmentLhTokens.default};
     }
     @media only screen and (min-width: 768px) {
       :host {
-        --font-size: ${fontTokens[descriptionFont] || fontTokens.default};
-        --line-height: ${lhTokens[descriptionFont] || lhTokens.default};
+        --font-size: ${segmentFontTokens[descriptionFont] || segmentFontTokens.default};
+        --line-height: ${segmentLhTokens[descriptionFont] || segmentLhTokens.default};
       }
     }
   </style>

@@ -7,7 +7,7 @@ import {
   DshColorSecondaryX6,
 } from '@tokens';
 
-const tokens = {
+export const accordionTokens = {
   primario: {
     background: DshColorSecondaryX6,
     borderColor: DshColorSecondaryX6,
@@ -41,22 +41,3 @@ const tokens = {
   },
 };
 
-export const getTokenBg = (type, variant) => {
-  if (variant === 'transversal') return tokens.borderbottom.background;
-  return tokens[type]?.background || 'transparent';
-};
-
-export const getTokenBorderLeft = (variant, type) => {
-  if (type === 'borderbottom' || type === 'none') return tokens[type].borderColorLeft;
-  return tokens[variant]?.borderColorLeft || DshColorPrimaryC1;
-};
-
-export const getTokenBorderBottom = (type, variant) => {
-  if (variant === 'transversal') return tokens.borderbottom.borderColorBottom;
-  return tokens[type]?.borderColorBottom || 'transparent';
-};
-
-export const getTokenBorder = (type, variant) => {
-  if (variant === 'transversal') return tokens.borderbottom.borderColor;
-  return tokens[type]?.borderColor || 'transparent';
-};

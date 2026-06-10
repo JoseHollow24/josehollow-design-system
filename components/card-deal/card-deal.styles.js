@@ -29,7 +29,7 @@ import {
   DshColorSecondaryG2,
   DshColorSecondaryG3,
 } from '@tokens';
-import { tokens } from './card-deal.tokens';
+import { segmentTokens } from './card-deal.tokens';
 
 export const customProperties = (segment) => html`
   <style>
@@ -47,7 +47,7 @@ export const customProperties = (segment) => html`
       left: ${DshSpace0};
       width: 100%;
       height: 100%;
-      background: ${tokens[segment] || tokens.default};
+      background: ${segmentTokens[segment] || segmentTokens.default};
       pointer-events: none;
       z-index: 200;
     }

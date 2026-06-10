@@ -17,7 +17,7 @@ import {
   DshColorSecondaryX1,
 } from '@tokens';
 
-export const bgTokens = {
+export const colorBgTokens = {
   a6: DshColorPrimaryA6,
   r6: DshColorComplementaryR6,
   n6: DshColorComplementaryN6,
@@ -29,7 +29,7 @@ export const bgTokens = {
   a1: DshColorPrimaryA1,
 };
 
-export const iconBgTokens = {
+export const colorIconBgTokens = {
   a6: DshColorPrimaryA1,
   r6: DshColorComplementaryR1,
   n6: DshColorComplementaryN1,

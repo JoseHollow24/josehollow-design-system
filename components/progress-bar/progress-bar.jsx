@@ -2,7 +2,7 @@ import { c } from 'atomico';
 import { useChildNodes } from '@atomico/hooks/use-child-nodes';
 
 import componentProps from './progress-bar.props';
-import { itemTokens } from './progress-bar.tokens';
+import { itemColorTokens } from './progress-bar.tokens';
 import fixedStyles from './progress-bar.styles';
 
 function ProgressBarComponent({
@@ -27,7 +27,7 @@ function ProgressBarComponent({
 
   const setColor = (option) => ({
     ...option,
-    color: itemTokens.color[option.color] || itemTokens.color.default,
+    color: itemColorTokens[option.color] || itemColorTokens.default,
   });
 
   const progressBars = options.map(setWidthValue).map(setColor);

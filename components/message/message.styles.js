@@ -14,7 +14,7 @@ import {
   DshSpace600,
   DshSpaceN400,
 } from '@tokens';
-import {bgTokens, borderTokens} from './message.tokens';
+import { variantBgTokens, variantBorderTokens } from './message.tokens';
 
 export const customProperties = (variant, closeButton, darkMode) => {
   const  themebg = darkMode ? '#252b3b' : '#ffffff';
@@ -24,8 +24,8 @@ export const customProperties = (variant, closeButton, darkMode) => {
    return html`
     <style>
       :host {
-        --background-color: ${ variant ? bgTokens[variant] : themebg };
-        --border-color: ${ variant ? borderTokens[variant] :  `1px solid ${themeborder}` };
+        --background-color: ${ variant ? variantBgTokens[variant] : themebg };
+        --border-color: ${ variant ? variantBorderTokens[variant] :  `1px solid ${themeborder}` };
         --margin: ${DshSpace0};
         --side-padding: ${closeButton ? '40px' : '0px'};
         --color: ${variant ? '#000000' : themecolor};

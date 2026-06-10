@@ -27,7 +27,7 @@ import {
   DshTextWeight400,
   DshShadowS,
 } from '@tokens';
-import { borderTokens, bgTokens } from './input.tokens';
+import { variantBorderTokens, variantBgTokens } from './input.tokens';
 
 export const customProperties = (variant) => {
   const variantName = variant === '' ? 'default' : variant;
@@ -36,14 +36,14 @@ export const customProperties = (variant) => {
       :host {
         --font-family: ${DshTextFamilyRawsonPro};
         --border-radius: ${DshBorderRadius100};
-        --color: ${bgTokens[variantName]};
+        --color: ${variantBgTokens[variantName]};
         --color-focus: ${DshColorPrimaryC2};
         --color-placeholder-variant: ${DshColorMonoBlack};
         --color-background-disabled: ${DshColorSecondaryX6};
         --border-color-hover-active: ${DshColorPrimaryC0};
         --color-g-1: ${DshColorPrimaryC0};
         --border: ${DshStrokeWeightS} solid ${DshColorPrimaryC1};
-        --border-variant: ${DshStrokeWeightM} solid ${borderTokens[variantName]};
+        --border-variant: ${DshStrokeWeightM} solid ${variantBorderTokens[variantName]};
         --margin: ${DshSpace0};
       }
     </style>

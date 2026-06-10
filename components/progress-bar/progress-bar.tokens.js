@@ -34,8 +34,7 @@ import {
   DshColorComplementaryN3,
 } from '@tokens';
 
-export const itemTokens = {
-  color: {
+export const itemColorTokens = {
     default: DshColorPrimaryA3,
     v1: DshColorComplementaryV1,
     v3: DshColorComplementaryV3,
@@ -70,5 +69,4 @@ export const itemTokens = {
     v6: DshColorComplementaryV6,
     r6: DshColorComplementaryR6,
     l6: DshColorComplementaryL6,
-  },
 };
