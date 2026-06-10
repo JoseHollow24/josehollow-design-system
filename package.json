@@ -83,10 +83,6 @@
       "types": "./dist/components/card-deal/index.d.ts",
       "import": "./dist/components/card-deal.js"
     },
-    "./components/card-highlight": {
-      "types": "./dist/components/card-highlight/index.d.ts",
-      "import": "./dist/components/card-highlight.js"
-    },
     "./components/file-uploader": {
       "types": "./dist/components/file-uploader/index.d.ts",
       "import": "./dist/components/file-uploader.js"
@@ -161,9 +157,6 @@
     "dev:accordions": "vite --config components/accordions/vite.config.js",
     "build:accordions": "npm run build:checkbox && vite build --config components/accordions/vite.config.js",
     "test:accordions": "npm run build:accordions && web-test-runner components/accordions/accordions.test.js --config components/accordions/web-test-runner.mjs",
-    "dev:card-highlight": "vite --config components/card-highlight/vite.config.js",
-    "build:card-highlight": "vite build --config components/card-highlight/vite.config.js",
-    "test:card-highlight": "npm run build:card-highlight && web-test-runner components/card-highlight/card-highlight.test.js --config components/card-highlight/web-test-runner.mjs",
     "dev:file-uploader": "vite --config components/file-uploader/vite.config.js",
     "build:file-uploader": "npm run build:icon && npm run build:button && vite build --config components/file-uploader/vite.config.js",
     "test:file-uploader": "npm run build:file-uploader && web-test-runner components/file-uploader/file-uploader.test.js --config components/file-uploader/web-test-runner.mjs",

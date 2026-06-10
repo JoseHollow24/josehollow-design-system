@@ -16,7 +16,6 @@ export * from "@components/menu-vertical";
 export * from "@components/modal";
 export * from "@components/card-details";
 export * from "@components/card-deal";
-export * from "@components/card-highlight";
 export * from "@components/file-uploader";
 export * from "@components/datepicker";
 export * from "@components/timepicker";

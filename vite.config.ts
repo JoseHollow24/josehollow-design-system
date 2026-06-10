@@ -8,7 +8,7 @@ const components = [
   "checkbox", "radio", "input", "textarea", "select",
   "accordions", "message", "pagination", "direct-access",
   "menu-vertical", "modal",
-  "card-details", "card-deal", "card-highlight",
+  "card-details", "card-deal",
   "file-uploader", "datepicker", "timepicker",
 ];
 

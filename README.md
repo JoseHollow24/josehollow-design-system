@@ -37,7 +37,6 @@ import 'josehollow-design-system/components/menu-vertical';
 import 'josehollow-design-system/components/modal';
 import 'josehollow-design-system/components/card-details';
 import 'josehollow-design-system/components/card-deal';
-import 'josehollow-design-system/components/card-highlight';
 import 'josehollow-design-system/components/file-uploader';
 import 'josehollow-design-system/components/datepicker';
 import 'josehollow-design-system/components/timepicker';
@@ -578,26 +577,6 @@ import 'josehollow-design-system/components/card-deal';
 | `tag-color` | String | — | Tag color |
 | `link` | String | — | CTA URL |
 | `link-text` | String | — | CTA label |
-
----
-
-### Card Highlight — `<dsh-card-highlights>` / `<dsh-card-highlights-item>`
-
-```js
-import 'josehollow-design-system/components/card-highlight';
-```
-
-```html
-<dsh-card-highlights>
-  <dsh-card-highlights-item slot="tab" title="Main highlight"></dsh-card-highlights-item>
-  <dsh-card-highlights-item slot="tab" title="Secondary"></dsh-card-highlights-item>
-</dsh-card-highlights>
-```
-
-| Prop (`dsh-card-highlights`) | Type | Description |
-|---|---|---|
-| `position` | String | Layout position |
-| `position-divide` | String | Divider position |
 
 ---
 
