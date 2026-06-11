@@ -123,7 +123,7 @@ export const styles = [
     }
     .select-container:focus {
       outline: 3px solid ${DshColorPrimaryC2};
-      outline-offset: 4px;
+      outline-offset: 3px;
       border-radius: ${DshBorderRadius100};
     }
     .disabled .select-box .select-container:focus { outline: 0; outline-offset: 0; }
@@ -141,6 +141,7 @@ export const styles = [
       border: 1px solid var(--border-color);
       box-shadow: ${DshShadowS};
     }
+    .selected { transition: border-color 150ms ease; }
     .selected:hover { border-color: var(--border-color-hover); }
     .error .selected { border-color: var(--color-error); width: calc(100% - 40px); }
     .disabled .selected {
@@ -189,6 +190,7 @@ export const styles = [
       align-items: center;
       gap: ${DshSpace100};
     }
+    .dropdown-item { transition: background-color 150ms ease; }
     .dropdown-item:hover { background: var(--background-hover); }
     .dropdown-item.disabled { color: var(--color-disabled); cursor: not-allowed; }
     .dropdown-item.selected { font-weight: ${DshTextWeight500}; }
@@ -219,6 +221,7 @@ export const styles = [
       justify-content: space-between;
       padding: ${DshSpace100} 0;
     }
+    .modal-button { transition: background-color 150ms ease; }
     .modal-button:hover { background: var(--background-hover); border-radius: ${DshBorderRadius100}; height: 48px; }
     .modal-label {
       color: var(--color-modal-top);

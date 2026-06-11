@@ -132,11 +132,12 @@ export const styles = css`
     top: ${DshSpace50};
     right: ${DshSpace50};
     border-radius: ${DshBorderRadius50};
+    transition: background-color 150ms ease;
   }
 
   .icon-close:focus {
     outline: 3px solid ${DshColorPrimaryC2};
-    outline-offset: ${DshSpace50};
+    outline-offset: 3px;
   }
 
   .icon-close:active {

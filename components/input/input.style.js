@@ -90,6 +90,7 @@ export const styles = [
       height: 48px;
       box-shadow: ${DshShadowS};
       background: var(--input-bg);
+      transition: outline 150ms ease, box-shadow 150ms ease;
     }
     :host([variant="success"]) .input-group,
     :host([variant="error"]) .input-group {

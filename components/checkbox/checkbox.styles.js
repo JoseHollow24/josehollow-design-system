@@ -40,8 +40,8 @@ export const styles = css`
     border-radius: ${DshBorderRadius100};
   }
   :host(:focus) {
-    outline: 2px solid ${DshColorPrimaryC3};
-    outline-offset: ${DshStrokeWeightM};
+    outline: 3px solid ${DshColorPrimaryC3};
+    outline-offset: 3px;
   }
   input[type='checkbox'] {
     height: 24px;
@@ -59,7 +59,7 @@ export const styles = css`
     user-select: none;
     outline: 0;
     flex-grow: 0;
-    transition: background 200ms;
+    transition: background 200ms ease, border-color 150ms ease;
     border-radius: ${DshBorderRadius50};
     box-sizing: border-box;
     position: relative;

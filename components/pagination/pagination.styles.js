@@ -86,6 +86,7 @@ export const styles = css`
     cursor: pointer;
     color: var(--color);
     border-radius: ${DshBorderRadius100};
+    transition: background-color 150ms ease, color 150ms ease;
   }
 
   .paginationItem.active {
@@ -131,6 +132,7 @@ export const styles = css`
     gap: 4px;
     width: var(--mobile-width);
     height: var(--mobile-height);
+    transition: background-color 150ms ease, color 150ms ease;
   }
 
   .prev.disabled,

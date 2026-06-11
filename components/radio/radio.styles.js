@@ -44,6 +44,7 @@ export const styles = css`
     position: relative;
     padding: ${DshSpace0};
     margin: ${DshSpace0};
+    transition: border-color 150ms ease, background-color 150ms ease;
   }
   input[type="radio"]:checked::before {
     display: block;
@@ -65,7 +66,7 @@ export const styles = css`
 `;
 
 export const lightStyles = css`
-  :host(.focus) { outline: 3px solid ${DshColorPrimaryC2}; }
+  :host(.focus) { outline: 3px solid ${DshColorPrimaryC2}; outline-offset: 3px; }
   input[type="radio"] { border: ${DshStrokeWeightS} solid ${DshColorPrimaryC1}; }
   input[type="radio"]:hover { border: ${DshStrokeWeightS} solid ${DshColorPrimaryC0}; }
   input[type="radio"]:checked::before { background: ${DshColorPrimaryC2}; }
@@ -76,7 +77,7 @@ export const lightStyles = css`
 `;
 
 export const darkStyles = css`
-  :host(.focus) { outline: 3px solid ${DshColorPrimaryC2}; }
+  :host(.focus) { outline: 3px solid ${DshColorPrimaryC2}; outline-offset: 3px; }
   input[type="radio"].dark { border: ${DshStrokeWeightS} solid ${DshColorPrimaryC6}; }
   input[type="radio"].dark:hover { border: ${DshStrokeWeightS} solid ${DshColorPrimaryC4}; }
   input[type="radio"].dark:checked::before { background: ${DshColorPrimaryC2}; }

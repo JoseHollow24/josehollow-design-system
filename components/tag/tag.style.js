@@ -139,6 +139,9 @@ const styles = [
       font-weight: ${DshTextWeight500};
       line-height: ${DshTextLineHeightXl};
     }
+    .interactive {
+      transition: background-color 150ms ease, outline-color 150ms ease;
+    }
     .interactive:hover {
       cursor: pointer;
       outline: 1px solid var(--border-color-hover);
